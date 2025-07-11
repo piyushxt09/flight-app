@@ -642,12 +642,12 @@
 
    .form-section-flight .form-box .Travellers {
        font-size: 16px !important;
-       width: 300px !important;
+       width: 280px !important;
 
    }
 
    .form-section-flight .form-box .add-return-date {
-       font-size: 14px;
+       font-size: 12px;
        text-decoration: none;
        height: 42px;
    }
