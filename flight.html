@@ -1,0 +1,978 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- AOS CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .service-card {
+
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .service-card:active {
+            transform: scale(0.92);
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <header class="d-flex justify-content-between align-items-center px-3 py-3 shadow-sm home-header mb-3">
+        <div class="d-flex align-items-center">
+            <a href="home.html " class="fw-medium">
+                <i class="fa-solid fa-arrow-left text-black "></i>
+            </a>
+
+            <h3 class="mb-0 ms-2 fs-4 fw-medium">Flight Search</h3>
+        </div>
+        <div class="d-flex align-items-center">
+            <div class="d-flex align-items-center me-3">
+                <img src="https://upload.wikimedia.org/wikipedia/en/4/41/Flag_of_India.svg" class="currency-flag"
+                    alt="India Flag">
+                <span>₹ | INR</span>
+            </div>
+
+        </div>
+    </header>
+
+
+
+    <div class="container mb-2 form-section-flight">
+        <div class=" p-2 " data-aos="fade-up">
+            <!-- Mode Selection -->
+            <div class="btn-group w-100 mb-4 p-1 primary-border" id="modeToggle ">
+                <button type="button" class="btn mode-btn active rounded me-1" data-mode="oneway">One
+                    Way</button>
+                <button type="button" class="btn  mode-btn rounded mx-1" data-mode="round">Round</button>
+                <button type="button" class="btn  mode-btn rounded ms-1" data-mode="multicity">Multicity</button>
+            </div>
+
+            <form>
+                <div id="one-round-way-form">
+                    <!-- From -->
+                    <div class="from">
+                        <i class="fas fa-plane-departure form-icon fs-2 mx-2"></i>
+                        <div class="flex-grow-1">
+                            <div class="form-label">From <br>
+                                <input type="text" class="form-control form-control-sm" name="from"
+                                    placeholder="From City" value="DEL-Delhi">
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="position-absolute">
+                        <button type="button position-relative"
+                            class="btn btn-link text-decoration-none p-0 exchange-arrow position-absolute top-0 end-0">
+                            <i class="fa-solid fa-arrow-right-arrow-left"></i>
+                        </button>
+                    </div>
+                    <!-- To -->
+                    <div class="to position-relativ e">
+                        <i class="fas fa-plane-arrival form-icon fs-2 mx-2"></i>
+                        <div class="flex-grow-1">
+                            <div class="form-label">To <br>
+                                <input type="text" class="form-control form-control-sm" name="to" placeholder="To City"
+                                    value="BOM-Mumbai">
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="row mb-0 mt-3">
+                        <div class="col-6">
+                            <div class="form-box departure-date" data-bs-toggle="modal" data-bs-target="#calendarModal">
+                                <i class="fas fa-calendar-alt form-icon fs-2 mx-2"></i>
+                                <div class="form-label mt-2">
+                                    Departure Date <br>
+                                    <input type="text" class="form-control form-control-sm departure"
+                                        name="departure-date" value="2025-09-11" readonly>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-box return-date px-2 p-1">
+                                <div class="form-label mb-1">
+                                    <button type="button" class="btn btn-link p-0 add-return-date primary-text">+ Add
+                                        Return Date <br>
+                                        <span>Save more on round trip</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="form-box d-none" data-bs-toggle="modal" data-bs-target="#calendarModal">
+                                <i class="fas fa-calendar-alt form-icon fs-2 mx-2"></i>
+                                <div class="form-label mt-2">Return Date <br>
+                                    <input type="text" class=" departure form-control form-control-sm"
+                                        name="return-date" value="2025-09-11">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="Multicity" class="d-none">
+
+
+                    <div id="city-list">
+                        <!-- First city row -->
+                        <div class="city-item">
+                            <div class="d-flex gap-4">
+                                <div class="from w-50">
+                                    <i class="fas fa-plane-departure form-icon fs-2 mx-2"></i>
+                                    <div class="flex-grow-1">
+                                        <div class="form-label">From <br><span>DEL</span></div>
+                                    </div>
+                                </div>
+                                <div class="to w-50">
+                                    <i class="fas fa-plane-arrival form-icon fs-2 mx-2"></i>
+                                    <div class="flex-grow-1">
+                                        <div class="form-label">To <br><span>BOM</span></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row mb-0">
+                                <div class="col-6">
+                                    <div class="form-box departure-date mb-0" data-bs-toggle="modal"
+                                        data-bs-target="#calendarModal">
+                                        <i class="fas fa-calendar-alt form-icon fs-2 mx-2"></i>
+                                        <div class="form-label mt-2">
+                                            Departure Date <br>
+                                            <input type="text" class="form-control form-control-sm departure"
+                                                name="departure-date" value="2025-09-11" readonly>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div>
+                        <div class="form-box px-2 my-3 " style="height: 44px; border: 1px dashed #007bd1;">
+                            <div class="form-label mb-1 d-flex align-items-center justify-content-center">
+                                <button id="add-city-btn" class="bg-white border-0 primary-text">+ Add City</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+
+                <div class="form-box mb-3" data-bs-toggle="modal" data-bs-target="#travellerModal">
+                    <i class="fas fa-user form-icon fs-2 mx-2"></i>
+                    <div class="form-label mt-1">
+                        Travellers & Class <br>
+                        <div class="d-flex gap-2 mt-1">
+                            <input type="text" name="travellers" id="travellerSummary"
+                                class="form-control Travellers form-control-sm w-50" value="1" placeholder="Travellers">
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="form-label">Select a Fare Type
+                </div>
+                <div class="fare-scroll mb-2">
+                    <button type="button" class="fare-btn">
+                        <div class="fw-bold">Student</div>
+                        <small>Extra discounts/baggage</small>
+                    </button>
+                    <button type="button" class="fare-btn">
+                        <div class="fw-bold">Senior Citizen</div>
+                        <small>Up to ₹600 off</small>
+                    </button>
+                    <button type="button" class="fare-btn">
+                        <div class="fw-bold">Senior Citizen</div>
+                        <small>Up to ₹600 off</small>
+                    </button>
+                    <button type="button" class="fare-btn">
+                        <div class="fw-bold">Senior Citizen</div>
+                        <small>Up to ₹600 off</small>
+                    </button>
+                </div>
+
+                <!-- Search Button -->
+                <button type="submit" class="search-btn mb-2">Search</button>
+            </form>
+
+
+
+        </div>
+    </div>
+
+
+
+    <!-- Section Header -->
+    <div class="d-flex justify-content-between align-items-center px-3 mb-2" data-aos="fade-right">
+        <h5 class="mb-0 fw-bold">Best Offers</h5>
+        <a href="#" class="text-decoration-none primary-text fw-semibold">View All</a>
+    </div>
+
+    <!-- Swiper Slider -->
+    <div class="swiper best-offers-swiper px-3 mb-2">
+        <div class="swiper-wrapper">
+
+            <!-- Slide 1 -->
+            <div class="swiper-slide" data-aos="fade-right" data-aos-delay="100">
+                <div class="offer-card" style="background-image: url('images/offer-2.jpg');">
+                    <div class="offer-overlay">
+                        <h6>SAVE UP TO</h6>
+                        <h2>50%</h2>
+                        <p>Only for family package, it won't last forever. Book now!</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="swiper-slide" data-aos="fade-right" data-aos-delay="200">
+                <div class="offer-card" style="background-image: url('images/offer-2.jpg');">
+                    <div class="offer-overlay">
+                        <h6>SAVE UP TO</h6>
+                        <h2>40%</h2>
+                        <p>Exclusive hotel deals. Limited time offer!</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="swiper-slide" data-aos="fade-right" data-aos-delay="300">
+                <div class="offer-card" style="background-image: url('images/offer-2.jpg');">
+                    <div class="offer-overlay">
+                        <h6>SAVE UP TO</h6>
+                        <h2>40%</h2>
+                        <p>Exclusive hotel deals. Limited time offer!</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="swiper-pagination"></div>
+    </div>
+
+
+
+    <!-- Section Header -->
+    <div class="d-flex justify-content-between align-items-center px-3 mb-2 mt-4" data-aos="fade-right">
+        <h5 class="mb-0 fw-bold">Popular Destinations</h5>
+        <a href="#" class="text-decoration-none primary-text fw-semibold">View All</a>
+    </div>
+
+
+
+    <!-- Swiper Container -->
+    <div class="mb-2 swiper popular-destinations-swiper px-3 mt-2 py-2">
+        <div class="swiper-wrapper">
+
+            <!-- Slide 1 -->
+            <div class="swiper-slide" data-aos="fade-up" data-aos-delay="100">
+                <div class="destination-card">
+                    <img src="images/tour-1.jpg" alt="Mount Bromo">
+                    <div class="destination-body">
+                        <h6 class="dest-title">Mount Bromo</h6>
+                        <p class="dest-location">Volcano in East Java</p>
+                        <div class="dest-info d-flex align-items-center mb-2">
+                            <span class="text-warning me-1"><i class="fas fa-star"></i></span>
+                            <span class="small">4.9</span>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="primary-text fw-semibold">$ 150/pax</span>
+                            <span class="duration-btn">3D2N</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="swiper-slide" data-aos="fade-up" data-aos-delay="200">
+                <div class="destination-card">
+                    <img src="images/tour-2.jpg" alt="Labengki Sombori">
+                    <div class="destination-body">
+                        <h6 class="dest-title">Labengki Sombori</h6>
+                        <p class="dest-location">Islands in Sulawesi</p>
+                        <div class="dest-info d-flex align-items-center mb-2">
+                            <span class="text-warning me-1"><i class="fas fa-star"></i></span>
+                            <span class="small">4.8</span>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="primary-text fw-semibold">$ 250/pax</span>
+                            <span class="duration-btn">3D2N</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="swiper-slide" data-aos="fade-up" data-aos-delay="300">
+                <div class="destination-card">
+                    <img src="images/tour-1.jpg" alt="Labengki Sombori">
+                    <div class="destination-body">
+                        <h6 class="dest-title">Labengki Sombori</h6>
+                        <p class="dest-location">Islands in Sulawesi</p>
+                        <div class="dest-info d-flex align-items-center mb-2">
+                            <span class="text-warning me-1"><i class="fas fa-star"></i></span>
+                            <span class="small">4.8</span>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="primary-text fw-semibold">$ 250/pax</span>
+                            <span class="duration-btn">3D2N</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 4 -->
+            <div class="swiper-slide" data-aos="fade-up" data-aos-delay="400">
+                <div class="destination-card">
+                    <img src="images/tour-2.jpg" alt="Labengki Sombori">
+                    <div class="destination-body">
+                        <h6 class="dest-title">Labengki Sombori</h6>
+                        <p class="dest-location">Islands in Sulawesi</p>
+                        <div class="dest-info d-flex align-items-center mb-2">
+                            <span class="text-warning me-1"><i class="fas fa-star"></i></span>
+                            <span class="small">4.8</span>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="primary-text fw-semibold">$ 250/pax</span>
+                            <span class="duration-btn">3D2N</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Add more slides as needed -->
+        </div>
+
+        <!-- Pagination Dots -->
+        <div class="swiper-pagination"></div>
+    </div>
+
+
+
+
+
+
+    <div class="px-3 mt-4 py-4" style="background-color: #f2f7fa; margin-bottom: 60px;">
+
+        <!-- FAQs Section -->
+        <h5 class="fw-bold border-bottom pb-1 mb-3" data-aos="fade-up" data-aos-delay="100">FAQs</h5>
+
+        <div class="accordion" id="faqsAccordion">
+
+            <div class="accordion-item border-0 mb-2 px-2" data-aos="fade-up" data-aos-delay="200">
+                <h2 class="accordion-header" id="headingOne">
+                    <button class="accordion-button collapsed px-0 bg-transparent shadow-none" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false"
+                        aria-controls="collapseOne">
+                        Q– How do I make a flight Booking on FlyEasyGo?
+                    </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne"
+                    data-bs-parent="#faqsAccordion">
+                    <div class="accordion-body ps-3">
+                        You can book flights easily via our website by selecting routes, dates, and paying securely.
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item border-0 mb-2 px-2" data-aos="fade-up" data-aos-delay="300">
+                <h2 class="accordion-header" id="headingTwo">
+                    <button class="accordion-button collapsed px-0 bg-transparent shadow-none" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false"
+                        aria-controls="collapseTwo">
+                        Q– Can I avail domestic flight offers on FlyEasyGo?
+                    </button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                    data-bs-parent="#faqsAccordion">
+                    <div class="accordion-body ps-3">
+                        Yes! We provide exclusive domestic flight offers—check our offers page regularly.
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item border-0 mb-2 px-2" data-aos="fade-up" data-aos-delay="400">
+                <h2 class="accordion-header" id="headingThree">
+                    <button class="accordion-button collapsed px-0 bg-transparent shadow-none" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false"
+                        aria-controls="collapseThree">
+                        Q– How Can I avail budget air tickets on FlyeasyGO?
+                    </button>
+                </h2>
+                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                    data-bs-parent="#faqsAccordion">
+                    <div class="accordion-body ps-3">
+                        Use our budget search filter and promotional codes for best rates on air tickets.
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Important Links Section -->
+        <h5 class="fw-bold border-bottom pb-1 mb-3 mt-4" data-aos="fade-up" data-aos-delay="500">Important Links</h5>
+
+        <div class="d-flex flex-wrap gap-2" data-aos="fade-up" data-aos-delay="600">
+            <a href="#" class="text-dark text-decoration-none">Blogs</a>
+            <a href="#" class="text-dark text-decoration-none">About Us</a>
+            <a href="#" class="text-dark text-decoration-none">Terms & Conditions</a>
+            <a href="#" class="text-dark text-decoration-none">Privacy Policy</a>
+            <a href="#" class="text-dark text-decoration-none">Payment Security</a>
+            <a href="#" class="text-dark text-decoration-none">Customer Support</a>
+        </div>
+
+    </div>
+
+
+
+
+
+    <div class="modal fade" id="locationModal" tabindex="-1" aria-labelledby="locationModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable modal-fullscreen">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="locationModalLabel">Select City or Airport</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- Search Input -->
+                    <div class="mb-3">
+                        <input type="text" class="form-control" placeholder="Enter City/Airport Name">
+                    </div>
+
+                    <!-- Popular Searches -->
+                    <div class="fw-bold text-muted mb-2">POPULAR SEARCHES</div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                            <div class="d-flex justify-content-between">
+                                <div>
+                                    <div>Mumbai, India</div>
+                                    <small class="text-muted">Chhatrapati Shivaji International Airport</small>
+                                </div>
+                                <div class="fw-bold">BOM</div>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="d-flex justify-content-between">
+                                <div>
+                                    <div>New Delhi, India</div>
+                                    <small class="text-muted">Indira Gandhi International Airport</small>
+                                </div>
+                                <div class="fw-bold">DEL</div>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="d-flex justify-content-between">
+                                <div>
+                                    <div>Bangkok, Thailand</div>
+                                    <small class="text-muted">Bangkok</small>
+                                </div>
+                                <div class="fw-bold">BKK</div>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="d-flex justify-content-between">
+                                <div>
+                                    <div>Bengaluru, India</div>
+                                    <small class="text-muted">Bengaluru International Airport</small>
+                                </div>
+                                <div class="fw-bold">BLR</div>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="d-flex justify-content-between">
+                                <div>
+                                    <div>Pune, India</div>
+                                    <small class="text-muted">Pune Airport</small>
+                                </div>
+                                <div class="fw-bold">PNQ</div>
+                            </div>
+                        </li>
+                        <!-- Add more as needed -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal fade" id="calendarModal" tabindex="-1" aria-labelledby="calendarModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="calendarModalLabel">Select Departure Date</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+
+                    <!-- Calendar Header -->
+                    <div class="d-flex justify-content-between border-bottom pb-2 mb-3">
+                        <button class="btn btn-outline-secondary btn-sm" id="prevMonth">‹</button>
+                        <div id="calendarMonth" class="fw-bold">July 2025</div>
+                        <button class="btn btn-outline-secondary btn-sm" id="nextMonth">›</button>
+                    </div>
+
+                    <!-- Calendar Grid -->
+                    <div id="calendarGrid" class="text-center">
+                        <!-- Dynamically generated calendar will go here -->
+                    </div>
+
+                    <div class="text-center mt-3">
+                        <button type="button" class="btn primary-btn w-100" data-bs-dismiss="modal">DONE</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal fade" id="travellerModal" tabindex="-1" aria-labelledby="travellerModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Travellers & Class</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+
+                    <h6 class="mb-3">Add Number of Travellers</h6>
+
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <div>
+                            <strong>Adults</strong><br><small>12 yrs & above</small>
+                        </div>
+                        <div class="btn-group">
+                            <button class="btn btn-outline-secondary btn-sm" id="adultMinus">-</button>
+                            <span class="px-2" id="adultCount">1</span>
+                            <button class="btn btn-outline-secondary btn-sm" id="adultPlus">+</button>
+                        </div>
+                    </div>
+
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <div>
+                            <strong>Children</strong><br><small>2 - 12 yrs</small>
+                        </div>
+                        <div class="btn-group">
+                            <button class="btn btn-outline-secondary btn-sm" id="childMinus">-</button>
+                            <span class="px-2" id="childCount">0</span>
+                            <button class="btn btn-outline-secondary btn-sm" id="childPlus">+</button>
+                        </div>
+                    </div>
+
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                        <div>
+                            <strong>Infants</strong><br><small>Under 2 yrs</small>
+                        </div>
+                        <div class="btn-group">
+                            <button class="btn btn-outline-secondary btn-sm" id="infantMinus">-</button>
+                            <span class="px-2" id="infantCount">0</span>
+                            <button class="btn btn-outline-secondary btn-sm" id="infantPlus">+</button>
+                        </div>
+                    </div>
+
+                    <h6 class="mb-2">Choose Cabin Class</h6>
+                    <div class="d-flex overflow-auto gap-2 mb-4" id="cabinOptions">
+                        <button class="btn btn-outline-primary cabin-btn active" data-class="Economy">Economy</button>
+                        <button class="btn btn-outline-primary cabin-btn" data-class="Premium Economy">Premium
+                        </button>
+                        <button class="btn btn-outline-primary cabin-btn" data-class="Business">Business</button>
+                        <button class="btn btn-outline-primary cabin-btn" data-class="First">First Class</button>
+                    </div>
+
+                    <button type="button" class="btn primary-btn w-100" id="travellerDoneBtn"
+                        data-bs-dismiss="modal">DONE</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+    <footer class="app-footer d-flex justify-content-around align-items-center shadow-lg">
+        <div class="footer-item active">
+            <i class="fas fa-home"></i>
+            <span>Home</span>
+        </div>
+        <div class="footer-item">
+            <i class="fas fa-ticket-alt"></i>
+            <span>My Trips</span>
+        </div>
+        <div class="footer-item">
+            <i class="fas fa-user"></i>
+            <span>Contact</span>
+        </div>
+        <div class="footer-item">
+            <i class="fas fa-percent"></i>
+            <span>Offers</span>
+        </div>
+    </footer>
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+        crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- AOS JS -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            let adult = 1, child = 0, infant = 0;
+            let cabinClass = 'Economy';
+
+            const updateCounts = () => {
+                document.getElementById('adultCount').textContent = adult;
+                document.getElementById('childCount').textContent = child;
+                document.getElementById('infantCount').textContent = infant;
+            };
+
+            // Adults
+            document.getElementById('adultPlus').addEventListener('click', () => { if (adult < 9) adult++; updateCounts(); });
+            document.getElementById('adultMinus').addEventListener('click', () => { if (adult > 1) adult--; updateCounts(); });
+
+            // Children
+            document.getElementById('childPlus').addEventListener('click', () => { if (child < 9) child++; updateCounts(); });
+            document.getElementById('childMinus').addEventListener('click', () => { if (child > 0) child--; updateCounts(); });
+
+            // Infants
+            document.getElementById('infantPlus').addEventListener('click', () => { if (infant < 9) infant++; updateCounts(); });
+            document.getElementById('infantMinus').addEventListener('click', () => { if (infant > 0) infant--; updateCounts(); });
+
+            // Cabin Class
+            document.querySelectorAll('.cabin-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    document.querySelectorAll('.cabin-btn').forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    cabinClass = btn.getAttribute('data-class');
+                });
+            });
+
+            // DONE button updates main form
+            document.getElementById('travellerDoneBtn').addEventListener('click', () => {
+                let summary = `${adult} Adult`;
+                if (child > 0) summary += `, ${child} Child`;
+                if (infant > 0) summary += `, ${infant} Infant`;
+                summary += `, ${cabinClass}`;
+                document.getElementById('travellerSummary').value = summary;
+            });
+        });
+    </script>
+
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const modeButtons = document.querySelectorAll('.mode-btn');
+            const addReturnDiv = document.querySelector('.form-box.return-date'); // First one
+            const returnDateDiv = document.querySelector('.form-box.d-none');     // Second one
+
+            modeButtons.forEach(button => {
+                button.addEventListener('click', function () {
+                    const mode = this.getAttribute('data-mode');
+
+                    if (mode === 'round') {
+                        addReturnDiv.classList.add('d-none');     // Hide "+ Add Return Date"
+                        returnDateDiv.classList.remove('d-none'); // Show actual return date
+                    } else {
+                        addReturnDiv.classList.remove('d-none');  // Show "+ Add Return Date"
+                        returnDateDiv.classList.add('d-none');    // Hide actual return date
+                    }
+
+                    // Update active class
+                    modeButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
+        });
+    </script>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            let currentMonth = 6; // July (0-indexed)
+            let currentYear = 2025;
+            const calendarMonth = document.getElementById('calendarMonth');
+            const calendarGrid = document.getElementById('calendarGrid');
+            const departureInput = document.querySelector('.departure-date input.departure');
+
+            let selectedDate = departureInput.value;
+
+            const prices = {
+                // Example random prices
+                "2025-07-11": 7651,
+                "2025-07-12": 5325,
+                "2025-07-17": 4071,
+                "2025-07-21": 3823,
+                "2025-08-08": 4646,
+                "2025-08-16": 4944,
+            };
+
+            function renderCalendar(month, year) {
+                calendarMonth.textContent = new Date(year, month).toLocaleString('default', { month: 'long', year: 'numeric' });
+                calendarGrid.innerHTML = '';
+
+                const firstDay = new Date(year, month, 1).getDay(); // 0=Sun
+                const daysInMonth = new Date(year, month + 1, 0).getDate();
+
+                // Fill empty slots before first day
+                for (let i = 0; i < firstDay; i++) {
+                    calendarGrid.innerHTML += `<div></div>`;
+                }
+
+                // Fill days
+                for (let day = 1; day <= daysInMonth; day++) {
+                    const dateStr = `${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
+                    const price = prices[dateStr] ? `₹${prices[dateStr].toLocaleString()}` : '';
+
+                    const isToday = dateStr === new Date().toISOString().split('T')[0];
+                    const isSelected = dateStr === selectedDate;
+
+                    calendarGrid.innerHTML += `
+        <div class="calendar-day ${isToday ? 'today' : ''} ${isSelected ? 'selected' : ''}" data-date="${dateStr}">
+          ${day}
+          <div class="price">${price}</div>
+        </div>`;
+                }
+
+                document.querySelectorAll('.calendar-day').forEach(el => {
+                    el.addEventListener('click', () => {
+                        selectedDate = el.getAttribute('data-date');
+                        departureInput.value = selectedDate;
+                        renderCalendar(month, year);
+                    });
+                });
+            }
+
+            document.getElementById('prevMonth').addEventListener('click', () => {
+                currentMonth--;
+                if (currentMonth < 0) {
+                    currentMonth = 11;
+                    currentYear--;
+                }
+                renderCalendar(currentMonth, currentYear);
+            });
+
+            document.getElementById('nextMonth').addEventListener('click', () => {
+                currentMonth++;
+                if (currentMonth > 11) {
+                    currentMonth = 0;
+                    currentYear++;
+                }
+                renderCalendar(currentMonth, currentYear);
+            });
+
+            renderCalendar(currentMonth, currentYear);
+        });
+    </script>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const MAX_CITIES = 6;
+            const cityList = document.getElementById('city-list');
+            const addButton = document.getElementById('add-city-btn');
+
+            const cityTemplate = `
+    <div class="city-item mt-3">
+      <div class="d-flex gap-4">
+        <div class="from w-50">
+          <i class="fas fa-plane-departure form-icon fs-2 mx-2"></i>
+          <div class="flex-grow-1">
+            <div class="form-label">From <br><span>DEL</span></div>
+          </div>
+        </div>
+        <div class="to w-50">
+          <i class="fas fa-plane-arrival form-icon fs-2 mx-2"></i>
+          <div class="flex-grow-1">
+            <div class="form-label">To <br><span>BOM</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="row mb-0">
+        <div class="col-6">
+         <div class="form-box departure-date mb-0" data-bs-toggle="modal"
+                                        data-bs-target="#calendarModal">
+                                        <i class="fas fa-calendar-alt form-icon fs-2 mx-2"></i>
+                                        <div class="form-label mt-2">
+                                            Departure Date <br>
+                                            <input type="text" class="form-control form-control-sm departure"
+                                                name="departure-date" value="2025-09-11" readonly>
+                                        </div>
+                                    </div>
+        </div>
+        <div class="col-6">
+          <div class="form-box mb-0 remove-btn" style="cursor: pointer; height: 44px;">
+            <i class="fa-solid fa-xmark form-icon fs-2 mx-2"></i>
+            <div class="form-label">Remove</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  `;
+
+            addButton.addEventListener('click', function (e) {
+                e.preventDefault();
+                const currentCount = cityList.querySelectorAll('.city-item').length;
+
+                if (currentCount >= MAX_CITIES) {
+                    alert('You can add a maximum of 6 cities.');
+                    return;
+                }
+
+                const newCity = document.createElement('div');
+                newCity.innerHTML = cityTemplate.trim();
+
+                // Add remove functionality to this new city
+                const removeButton = newCity.querySelector('.remove-btn');
+                removeButton.addEventListener('click', function () {
+                    newCity.remove();
+                });
+
+                cityList.appendChild(newCity);
+            });
+        });
+    </script>
+
+
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true,
+            easing: 'ease-in-out'
+        });
+    </script>
+
+
+    <script>
+        const footerItems = document.querySelectorAll('.footer-item');
+
+        footerItems.forEach(item => {
+            item.addEventListener('click', () => {
+                footerItems.forEach(i => i.classList.remove('active'));
+                item.classList.add('active');
+            });
+        });
+    </script>
+
+    <script>
+        const modeButtons = document.querySelectorAll('.mode-btn');
+        const returnDateGroup = document.getElementById('returnDateGroup');
+
+        modeButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                modeButtons.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                const mode = btn.getAttribute('data-mode');
+                if (mode === 'round') {
+                    returnDateGroup.classList.remove('d-none');
+                } else {
+                    returnDateGroup.classList.add('d-none');
+                }
+            });
+        });
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const modeButtons = document.querySelectorAll('.mode-btn');
+            const oneRoundSection = document.getElementById('one-round-way-form');
+            const multiCitySection = document.getElementById('Multicity');
+
+            modeButtons.forEach(button => {
+                button.addEventListener('click', function () {
+                    const mode = this.getAttribute('data-mode');
+
+                    if (mode === 'multicity') {
+                        oneRoundSection.classList.add('d-none');
+                        multiCitySection.classList.remove('d-none');
+                    } else {
+                        oneRoundSection.classList.remove('d-none');
+                        multiCitySection.classList.add('d-none');
+                    }
+
+                    // Optional: update active class for buttons
+                    modeButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
+        });
+    </script>
+
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const locationModal = new bootstrap.Modal(document.getElementById('locationModal'));
+
+
+            document.querySelectorAll('.from').forEach(fromEl => {
+                fromEl.addEventListener('click', () => {
+                    locationModal.show();
+                });
+            });
+
+
+            document.querySelectorAll('.to').forEach(toEl => {
+                toEl.addEventListener('click', () => {
+                    locationModal.show();
+                });
+            });
+        });
+    </script>
+
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const exchangeButton = document.querySelector('.exchange-arrow');
+            const fromInput = document.querySelector('.from input');
+            const toInput = document.querySelector('.to input');
+
+            exchangeButton.addEventListener('click', (e) => {
+                e.preventDefault();
+                // Swap the values
+                const temp = fromInput.value;
+                fromInput.value = toInput.value;
+                toInput.value = temp;
+            });
+        });
+    </script>
+
+
+    <script src="slider.js"></script>
+
+</body>
+
+</html>
