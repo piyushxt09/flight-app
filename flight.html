@@ -524,24 +524,24 @@
                     <h5 class="modal-title" id="calendarModalLabel">Select Departure Date</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body">
-
-                    <!-- Calendar Header -->
-                    <div class="d-flex justify-content-between border-bottom pb-2 mb-3">
-                        <button class="btn btn-outline-secondary btn-sm" id="prevMonth">‹</button>
-                        <div id="calendarMonth" class="fw-bold">July 2025</div>
-                        <button class="btn btn-outline-secondary btn-sm" id="nextMonth">›</button>
+                <div class="modal-body p-0">
+                    <div class="calendar-container">
+                        <div class="month-section" id="month1">
+                            <div class="month-header gradient-header">July 2025</div>
+                            <div class="calendar-grid" id="calendarGrid1"></div>
+                        </div>
+                        <div class="month-section" id="month2">
+                            <div class="month-header gradient-header">August 2025</div>
+                            <div class="calendar-grid" id="calendarGrid2"></div>
+                        </div>
+                        <div class="month-section" id="month3">
+                            <div class="month-header gradient-header">September 2025</div>
+                            <div class="calendar-grid" id="calendarGrid3"></div>
+                        </div>
                     </div>
 
-                    <!-- Calendar Grid -->
-                    <div id="calendarGrid" class="text-center">
-                        <!-- Dynamically generated calendar will go here -->
-                    </div>
-
-                    <div class="text-center mt-3">
-                        <button type="button" class="btn primary-btn w-100" data-bs-dismiss="modal">DONE</button>
-                    </div>
                 </div>
+
             </div>
         </div>
     </div>
@@ -609,11 +609,6 @@
 
 
 
-
-
-
-
-
     <footer class="app-footer d-flex justify-content-around align-items-center shadow-lg">
         <div class="footer-item active">
             <i class="fas fa-home"></i>
@@ -632,9 +627,6 @@
             <span>Offers</span>
         </div>
     </footer>
-
-
-
 
 
 
@@ -720,82 +712,156 @@
 
 
     <script>
+        const prices = {
+            "2025-07-1": 7651,
+            "2025-07-2": 7651,
+            "2025-07-3": 7651,
+            "2025-07-4": 7651,
+            "2025-07-5": 7651,
+            "2025-07-6": 7651,
+            "2025-07-7": 7651,
+            "2025-07-8": 7651,
+            "2025-07-9": 7651,
+            "2025-07-10": 7651,
+            "2025-07-11": 7651,
+            "2025-07-12": 7651,
+            "2025-07-13": 7651,
+            "2025-07-14": 5325,
+            "2025-07-15": 4071,
+            "2025-07-26": 3823,
+            "2025-08-08": 4646,
+            "2025-08-16": 4944
+        };
+
+        let selectedDate = '';
+        const departureInput = document.createElement('input');
+        departureInput.type = 'hidden';
+        document.body.appendChild(departureInput);
+
+        let activeDepartureInput = null;
+
         document.addEventListener('DOMContentLoaded', () => {
-            let currentMonth = 6; // July (0-indexed)
-            let currentYear = 2025;
-            const calendarMonth = document.getElementById('calendarMonth');
-            const calendarGrid = document.getElementById('calendarGrid');
-            const departureInput = document.querySelector('.departure-date input.departure');
-
-            let selectedDate = departureInput.value;
-
-            const prices = {
-                // Example random prices
-                "2025-07-11": 7651,
-                "2025-07-12": 5325,
-                "2025-07-17": 4071,
-                "2025-07-21": 3823,
-                "2025-08-08": 4646,
-                "2025-08-16": 4944,
-            };
-
-            function renderCalendar(month, year) {
-                calendarMonth.textContent = new Date(year, month).toLocaleString('default', { month: 'long', year: 'numeric' });
-                calendarGrid.innerHTML = '';
-
-                const firstDay = new Date(year, month, 1).getDay(); // 0=Sun
-                const daysInMonth = new Date(year, month + 1, 0).getDate();
-
-                // Fill empty slots before first day
-                for (let i = 0; i < firstDay; i++) {
-                    calendarGrid.innerHTML += `<div></div>`;
-                }
-
-                // Fill days
-                for (let day = 1; day <= daysInMonth; day++) {
-                    const dateStr = `${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
-                    const price = prices[dateStr] ? `₹${prices[dateStr].toLocaleString()}` : '';
-
-                    const isToday = dateStr === new Date().toISOString().split('T')[0];
-                    const isSelected = dateStr === selectedDate;
-
-                    calendarGrid.innerHTML += `
-        <div class="calendar-day ${isToday ? 'today' : ''} ${isSelected ? 'selected' : ''}" data-date="${dateStr}">
-          ${day}
-          <div class="price">${price}</div>
-        </div>`;
-                }
-
-                document.querySelectorAll('.calendar-day').forEach(el => {
-                    el.addEventListener('click', () => {
-                        selectedDate = el.getAttribute('data-date');
-                        departureInput.value = selectedDate;
-                        renderCalendar(month, year);
-                    });
+            document.querySelectorAll('.departure').forEach(input => {
+                input.addEventListener('click', () => {
+                    activeDepartureInput = input;
+                    const modalEl = document.getElementById('calendarModal');
+                    const modalInstance = new bootstrap.Modal(modalEl);
+                    modalInstance.show();
                 });
+            });
+
+            renderCalendars();
+        });
+
+        let currentMonth = 6;
+        let currentYear = 2025;
+
+        function renderCalendars() {
+            renderCalendarMonth(currentMonth, currentYear, 'calendarGrid1');
+            const nextMonth = (currentMonth + 1) % 12;
+            const nextYear = currentMonth === 11 ? currentYear + 1 : currentYear;
+            renderCalendarMonth(nextMonth, nextYear, 'calendarGrid2');
+            renderCalendarMonth(nextMonth, nextYear, 'calendarGrid3');
+
+            document.getElementById('month1').querySelector('.month-header').textContent =
+                new Date(currentYear, currentMonth).toLocaleString('default', { month: 'long', year: 'numeric' });
+            document.getElementById('month2').querySelector('.month-header').textContent =
+                new Date(nextYear, nextMonth).toLocaleString('default', { month: 'long', year: 'numeric' });
+        }
+
+        function renderCalendarMonth(month, year, gridId) {
+            const grid = document.getElementById(gridId);
+            grid.innerHTML = '';
+
+            const weekdays = ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'];
+            weekdays.forEach(day => {
+                grid.innerHTML += `<div style="font-weight:bold;color:#555;">${day}</div>`;
+            });
+
+            const firstDay = new Date(year, month, 1).getDay();
+            const daysInMonth = new Date(year, month + 1, 0).getDate();
+
+            for (let i = 0; i < firstDay; i++) {
+                grid.innerHTML += `<div></div>`;
             }
 
-            document.getElementById('prevMonth').addEventListener('click', () => {
-                currentMonth--;
-                if (currentMonth < 0) {
-                    currentMonth = 11;
-                    currentYear--;
-                }
-                renderCalendar(currentMonth, currentYear);
-            });
+            for (let day = 1; day <= daysInMonth; day++) {
+                const dateStr = `${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
+                const price = prices[dateStr] ? `₹${prices[dateStr].toLocaleString()}` : '';
 
-            document.getElementById('nextMonth').addEventListener('click', () => {
-                currentMonth++;
-                if (currentMonth > 11) {
-                    currentMonth = 0;
-                    currentYear++;
-                }
-                renderCalendar(currentMonth, currentYear);
-            });
+                const isToday = dateStr === new Date().toISOString().split('T')[0];
+                const isSelected = dateStr === selectedDate;
 
-            renderCalendar(currentMonth, currentYear);
+                grid.innerHTML += `
+        <div class="calendar-day ${isToday ? 'today' : ''} ${isSelected ? 'selected' : ''}" data-date="${dateStr}">
+          ${day}
+          ${price ? `<div class="price">${price}</div>` : ''}
+        </div>`;
+            }
+
+            grid.querySelectorAll('.calendar-day').forEach(el => {
+                el.addEventListener('click', () => {
+                    selectedDate = el.getAttribute('data-date');
+
+                    if (activeDepartureInput) {
+                        activeDepartureInput.value = selectedDate;
+                    }
+
+                    const modalEl = document.getElementById('calendarModal');
+                    if (modalEl) {
+                        const modalInstance = bootstrap.Modal.getInstance(modalEl);
+                        if (modalInstance) {
+                            modalInstance.hide();
+                            document.querySelectorAll('.modal-backdrop').forEach(el => el.remove());
+
+
+                        }
+                    }
+                });
+
+
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            renderCalendars();
         });
     </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            let activeLocationInput = null;
+            const locationModalEl = document.getElementById('locationModal');
+            const locationModal = new bootstrap.Modal(locationModalEl);
+
+            // 1️⃣ Attach click handlers to all FROM and TO inputs
+            document.querySelectorAll('.from input, .to input').forEach(input => {
+                input.addEventListener('click', () => {
+                    activeLocationInput = input;
+                    locationModal.show();
+                });
+            });
+
+            // 2️⃣ Handle click on any item in modal
+            locationModalEl.addEventListener('click', (e) => {
+                const listItem = e.target.closest('.list-group-item');
+                if (!listItem) return;
+
+                // Extract city and airport code from clicked item
+                const city = listItem.querySelector('div > div').textContent.trim();
+                const code = listItem.querySelector('.fw-bold').textContent.trim();
+
+                if (activeLocationInput) {
+                    // Example format: DEL-Delhi
+                    activeLocationInput.value = `${code}-${city}`;
+                }
+
+                // Close the modal
+                locationModal.hide();
+            });
+        });
+    </script>
+
 
 
     <script>
