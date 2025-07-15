@@ -1,0 +1,1178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- AOS CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .service-card {
+
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .service-card:active {
+            transform: scale(0.92);
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        .form-section-flight .form-box .Travellers {
+            font-size: 16px !important;
+            width: 240px !important;
+            margin-top: -6px;
+        }
+
+        .card hr {
+            margin: 1rem 0;
+            opacity: 0.2;
+        }
+    </style>
+
+
+</head>
+
+<body>
+
+    <header class="d-flex justify-content-between align-items-center px-3 py-3 shadow-sm home-header mb-3">
+        <div class="d-flex align-items-center ">
+            <a href="flight.html" class="fw-medium">
+                <i class="fa-solid  fs-2 fa-arrow-left text-black "></i>
+            </a>
+            <div class="header-heading-search d-flex flex-column align-items-center ms-4">
+                <h3 class="mb-0 ms-2 fs-6 fw-medium">Delhi To Mumbai</h3>
+                <p class="text-muted mb-0">Wed, 6 Jul | 1 Adult</p>
+            </div>
+        </div>
+        <div class="d-flex align-items-center">
+            <div class="d-flex align-items-center">
+                <button class="btn bg-white border-0" data-bs-toggle="modal" data-bs-target="#modifyModal">
+                    <img src="images/modify.png" alt="Modify">
+                </button>
+
+
+
+                <button class="btn bg-white border-0" data-bs-toggle="modal" data-bs-target="#modifyFilter">
+                    <img src="images/filter.png" class="currency-flag" alt="India Flag">
+                </button>
+
+            </div>
+
+        </div>
+    </header>
+
+
+    <div class="container my-4">
+        <div class="toggle-btn-group p-1">
+            <button id="departureBtn" class="toggle-btn active">Departure</button>
+            <button id="returnBtn" class="toggle-btn">Return</button>
+        </div>
+    </div>
+
+
+    <div class="container mt-3" style="margin-bottom: 80px;">
+
+        <div class="card shadow-sm rounded-4 p-3 mb-3 " style="max-width: 400px;" data-aos="fade-down">
+
+            <div class="d-flex justify-content-between align-items-center mb-2">
+                <div class="d-flex align-items-center">
+                    <img src="images/indigo.png" alt="IndiGo" width="24" height="24" class="me-2">
+                    <span class="fw-semibold">IndiGo</span>
+                </div>
+                <div class="primary-text fw-bold fs-5">
+                    $1400
+                </div>
+            </div>
+
+
+            <div class="d-flex justify-content-between align-items-center text-center">
+                <div>
+                    <div class="text-muted small">5:45 pm</div>
+                    <div class="fw-bold fs-5">DEL</div>
+                </div>
+                <div class="flex-grow-1 px-2 d-flex flex-column align-items-center">
+                    <div class="text-muted small">1h, 10m</div>
+                    <div class="d-flex align-items-center justify-content-center w-100">
+                        <div class="border-top border-dashed flex-grow-1"></div>
+                        <div class="px-2">
+                            <img src="images/airline.png" alt="Airplane" width="24" height="24">
+                        </div>
+                        <div class="border-top border-dashed flex-grow-1"></div>
+                    </div>
+                </div>
+                <div>
+                    <div class="text-muted small">6:55 pm</div>
+                    <div class="fw-bold fs-5">BOM</div>
+                </div>
+            </div>
+
+            <div class="d-flex justify-content-between text-muted small mt-0">
+                <div>Delhi - IGI Airport</div>
+                <div>Mumbai - BOM</div>
+            </div>
+        </div>
+        <div class="card shadow-sm rounded-4 p-3 mb-3 " style="max-width: 400px;" data-aos="fade-down">
+
+            <div class="d-flex justify-content-between align-items-center mb-2">
+                <div class="d-flex align-items-center">
+                    <img src="images/air-india.png" alt="IndiGo" width="24" height="24" class="me-2">
+                    <span class="fw-semibold">Air India</span>
+                </div>
+                <div class="primary-text fw-bold fs-5">
+                    $1400
+                </div>
+            </div>
+
+
+            <div class="d-flex justify-content-between align-items-center text-center">
+                <div>
+                    <div class="text-muted small">5:45 pm</div>
+                    <div class="fw-bold fs-5">DEL</div>
+                </div>
+                <div class="flex-grow-1 px-2 d-flex flex-column align-items-center">
+                    <div class="text-muted small">1h, 10m</div>
+                    <div class="d-flex align-items-center justify-content-center w-100">
+                        <div class="border-top border-dashed flex-grow-1"></div>
+                        <div class="px-2">
+                            <img src="images/airline.png" alt="Airplane" width="24" height="24">
+                        </div>
+                        <div class="border-top border-dashed flex-grow-1"></div>
+                    </div>
+                </div>
+                <div>
+                    <div class="text-muted small">6:55 pm</div>
+                    <div class="fw-bold fs-5">BOM</div>
+                </div>
+            </div>
+
+            <div class="d-flex justify-content-between text-muted small mt-0">
+                <div>Delhi - IGI Airport</div>
+                <div>Mumbai - BOM</div>
+            </div>
+        </div>
+        <div class="card shadow-sm rounded-4 p-3 mb-3 " style="max-width: 400px;" data-aos="fade-down">
+
+            <div class="d-flex justify-content-between align-items-center mb-2">
+                <div class="d-flex align-items-center">
+                    <img src="images/indigo.png" alt="IndiGo" width="24" height="24" class="me-2">
+                    <span class="fw-semibold">IndiGo</span>
+                </div>
+                <div class="primary-text fw-bold fs-5">
+                    $1400
+                </div>
+            </div>
+
+
+            <div class="d-flex justify-content-between align-items-center text-center">
+                <div>
+                    <div class="text-muted small">5:45 pm</div>
+                    <div class="fw-bold fs-5">DEL</div>
+                </div>
+                <div class="flex-grow-1 px-2 d-flex flex-column align-items-center">
+                    <div class="text-muted small">1h, 10m</div>
+                    <div class="d-flex align-items-center justify-content-center w-100">
+                        <div class="border-top border-dashed flex-grow-1"></div>
+                        <div class="px-2">
+                            <img src="images/airline.png" alt="Airplane" width="24" height="24">
+                        </div>
+                        <div class="border-top border-dashed flex-grow-1"></div>
+                    </div>
+                </div>
+                <div>
+                    <div class="text-muted small">6:55 pm</div>
+                    <div class="fw-bold fs-5">BOM</div>
+                </div>
+            </div>
+
+            <div class="d-flex justify-content-between text-muted small mt-0">
+                <div>Delhi - IGI Airport</div>
+                <div>Mumbai - BOM</div>
+            </div>
+        </div>
+        <div class="card shadow-sm rounded-4 p-3 mb-3 " style="max-width: 400px;" data-aos="fade-down">
+
+            <div class="d-flex justify-content-between align-items-center mb-2">
+                <div class="d-flex align-items-center">
+                    <img src="images/air-india.png" alt="IndiGo" width="24" height="24" class="me-2">
+                    <span class="fw-semibold">Air India</span>
+                </div>
+                <div class="primary-text fw-bold fs-5">
+                    $1400
+                </div>
+            </div>
+
+
+            <div class="d-flex justify-content-between align-items-center text-center">
+                <div>
+                    <div class="text-muted small">5:45 pm</div>
+                    <div class="fw-bold fs-5">DEL</div>
+                </div>
+                <div class="flex-grow-1 px-2 d-flex flex-column align-items-center">
+                    <div class="text-muted small">1h, 10m</div>
+                    <div class="d-flex align-items-center justify-content-center w-100">
+                        <div class="border-top border-dashed flex-grow-1"></div>
+                        <div class="px-2">
+                            <img src="images/airline.png" alt="Airplane" width="24" height="24">
+                        </div>
+                        <div class="border-top border-dashed flex-grow-1"></div>
+                    </div>
+                </div>
+                <div>
+                    <div class="text-muted small">6:55 pm</div>
+                    <div class="fw-bold fs-5">BOM</div>
+                </div>
+            </div>
+
+            <div class="d-flex justify-content-between text-muted small mt-0">
+                <div>Delhi - IGI Airport</div>
+                <div>Mumbai - BOM</div>
+            </div>
+        </div>
+        <div class="card shadow-sm rounded-4 p-3 mb-3 " style="max-width: 400px;" data-aos="fade-down">
+
+            <div class="d-flex justify-content-between align-items-center mb-2">
+                <div class="d-flex align-items-center">
+                    <img src="images/indigo.png" alt="IndiGo" width="24" height="24" class="me-2">
+                    <span class="fw-semibold">IndiGo</span>
+                </div>
+                <div class="primary-text fw-bold fs-5">
+                    $1400
+                </div>
+            </div>
+
+
+            <div class="d-flex justify-content-between align-items-center text-center">
+                <div>
+                    <div class="text-muted small">5:45 pm</div>
+                    <div class="fw-bold fs-5">DEL</div>
+                </div>
+                <div class="flex-grow-1 px-2 d-flex flex-column align-items-center">
+                    <div class="text-muted small">1h, 10m</div>
+                    <div class="d-flex align-items-center justify-content-center w-100">
+                        <div class="border-top border-dashed flex-grow-1"></div>
+                        <div class="px-2">
+                            <img src="images/airline.png" alt="Airplane" width="24" height="24">
+                        </div>
+                        <div class="border-top border-dashed flex-grow-1"></div>
+                    </div>
+                </div>
+                <div>
+                    <div class="text-muted small">6:55 pm</div>
+                    <div class="fw-bold fs-5">BOM</div>
+                </div>
+            </div>
+
+            <div class="d-flex justify-content-between text-muted small mt-0">
+                <div>Delhi - IGI Airport</div>
+                <div>Mumbai - BOM</div>
+            </div>
+        </div>
+        <div class="card shadow-sm rounded-4 p-3 mb-3 " style="max-width: 400px;" data-aos="fade-down">
+
+            <div class="d-flex justify-content-between align-items-center mb-2">
+                <div class="d-flex align-items-center">
+                    <img src="images/air-india.png" alt="IndiGo" width="24" height="24" class="me-2">
+                    <span class="fw-semibold">Air India</span>
+                </div>
+                <div class="primary-text fw-bold fs-5">
+                    $1400
+                </div>
+            </div>
+
+
+            <div class="d-flex justify-content-between align-items-center text-center">
+                <div>
+                    <div class="text-muted small">5:45 pm</div>
+                    <div class="fw-bold fs-5">DEL</div>
+                </div>
+                <div class="flex-grow-1 px-2 d-flex flex-column align-items-center">
+                    <div class="text-muted small">1h, 10m</div>
+                    <div class="d-flex align-items-center justify-content-center w-100">
+                        <div class="border-top border-dashed flex-grow-1"></div>
+                        <div class="px-2">
+                            <img src="images/airline.png" alt="Airplane" width="24" height="24">
+                        </div>
+                        <div class="border-top border-dashed flex-grow-1"></div>
+                    </div>
+                </div>
+                <div>
+                    <div class="text-muted small">6:55 pm</div>
+                    <div class="fw-bold fs-5">BOM</div>
+                </div>
+            </div>
+
+            <div class="d-flex justify-content-between text-muted small mt-0">
+                <div>Delhi - IGI Airport</div>
+                <div>Mumbai - BOM</div>
+            </div>
+        </div>
+        <div class="card shadow-sm rounded-4 p-3 mb-3 " style="max-width: 400px;" data-aos="fade-down">
+
+            <div class="d-flex justify-content-between align-items-center mb-2">
+                <div class="d-flex align-items-center">
+                    <img src="images/indigo.png" alt="IndiGo" width="24" height="24" class="me-2">
+                    <span class="fw-semibold">IndiGo</span>
+                </div>
+                <div class="primary-text fw-bold fs-5">
+                    $1400
+                </div>
+            </div>
+
+
+            <div class="d-flex justify-content-between align-items-center text-center">
+                <div>
+                    <div class="text-muted small">5:45 pm</div>
+                    <div class="fw-bold fs-5">DEL</div>
+                </div>
+                <div class="flex-grow-1 px-2 d-flex flex-column align-items-center">
+                    <div class="text-muted small">1h, 10m</div>
+                    <div class="d-flex align-items-center justify-content-center w-100">
+                        <div class="border-top border-dashed flex-grow-1"></div>
+                        <div class="px-2">
+                            <img src="images/airline.png" alt="Airplane" width="24" height="24">
+                        </div>
+                        <div class="border-top border-dashed flex-grow-1"></div>
+                    </div>
+                </div>
+                <div>
+                    <div class="text-muted small">6:55 pm</div>
+                    <div class="fw-bold fs-5">BOM</div>
+                </div>
+            </div>
+
+            <div class="d-flex justify-content-between text-muted small mt-0">
+                <div>Delhi - IGI Airport</div>
+                <div>Mumbai - BOM</div>
+            </div>
+        </div>
+        <div class="card shadow-sm rounded-4 p-3 mb-3 " style="max-width: 400px;" data-aos="fade-down">
+
+            <div class="d-flex justify-content-between align-items-center mb-2">
+                <div class="d-flex align-items-center">
+                    <img src="images/air-india.png" alt="IndiGo" width="24" height="24" class="me-2">
+                    <span class="fw-semibold">Air India</span>
+                </div>
+                <div class="primary-text fw-bold fs-5">
+                    $1400
+                </div>
+            </div>
+
+
+            <div class="d-flex justify-content-between align-items-center text-center">
+                <div>
+                    <div class="text-muted small">5:45 pm</div>
+                    <div class="fw-bold fs-5">DEL</div>
+                </div>
+                <div class="flex-grow-1 px-2 d-flex flex-column align-items-center">
+                    <div class="text-muted small">1h, 10m</div>
+                    <div class="d-flex align-items-center justify-content-center w-100">
+                        <div class="border-top border-dashed flex-grow-1"></div>
+                        <div class="px-2">
+                            <img src="images/airline.png" alt="Airplane" width="24" height="24">
+                        </div>
+                        <div class="border-top border-dashed flex-grow-1"></div>
+                    </div>
+                </div>
+                <div>
+                    <div class="text-muted small">6:55 pm</div>
+                    <div class="fw-bold fs-5">BOM</div>
+                </div>
+            </div>
+
+            <div class="d-flex justify-content-between text-muted small mt-0">
+                <div>Delhi - IGI Airport</div>
+                <div>Mumbai - BOM</div>
+            </div>
+        </div>
+
+
+
+    </div>
+
+
+
+
+
+
+    <div class="modal fade" id="modifyModal" tabindex="-1" aria-labelledby="modifyModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h5 class="modal-title fs-4" id="modifyModalLabel">Modify Search</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+
+                <div class="modal-body">
+                    <div class=" form-section-flight">
+                        <div class=" p-2 " data-aos="fade-up">
+                            <!-- Mode Selection -->
+                            <div class="btn-group w-100 mb-4 p-1 primary-border" id="modeToggle ">
+                                <button type="button" class="btn mode-btn active rounded me-1" data-mode="oneway">One
+                                    Way</button>
+                                <button type="button" class="btn  mode-btn rounded mx-1"
+                                    data-mode="round">Round</button>
+                                <button type="button" class="btn  mode-btn rounded ms-1"
+                                    data-mode="multicity">Multicity</button>
+                            </div>
+
+                            <form>
+                                <div id="one-round-way-form">
+                                    <!-- From -->
+                                    <div class="from">
+                                        <i class="fas fa-plane-departure form-icon fs-2 mx-2"></i>
+                                        <div class="flex-grow-1">
+                                            <div class="form-label">From <br>
+                                                <input type="text" class="form-control form-control-sm" name="from"
+                                                    placeholder="From City" value="DEL-Delhi">
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="position-absolute">
+                                        <button type="button position-relative"
+                                            class="btn btn-link text-decoration-none p-0 exchange-arrow position-absolute top-0 end-0">
+                                            <i class="fa-solid fa-arrow-right-arrow-left"></i>
+                                        </button>
+                                    </div>
+                                    <!-- To -->
+                                    <div class="to position-relativ e">
+                                        <i class="fas fa-plane-arrival form-icon fs-2 mx-2"></i>
+                                        <div class="flex-grow-1">
+                                            <div class="form-label">To <br>
+                                                <input type="text" class="form-control form-control-sm" name="to"
+                                                    placeholder="To City" value="BOM-Mumbai">
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                    <div class="row mb-0 mt-3">
+                                        <div class="col-6">
+                                            <div class="form-box departure-date" data-bs-toggle="modal"
+                                                data-bs-target="#calendarModal">
+                                                <i class="fas fa-calendar-alt form-icon fs-2 mx-2"></i>
+                                                <div class="form-label mt-2">
+                                                    Departure Date <br>
+                                                    <input type="text" class="form-control form-control-sm departure"
+                                                        name="departure-date" value="2025-09-11" readonly>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="form-box return-date px-2 p-1">
+                                                <div class="form-label mb-0">
+                                                    <button type="button"
+                                                        class="btn btn-link p-0 add-return-date primary-text">+ Add
+                                                        Return Date <br>
+                                                        <span>Save more on round trip</span>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            <div class="form-box d-none" data-bs-toggle="modal"
+                                                data-bs-target="#calendarModal">
+                                                <i class="fas fa-calendar-alt form-icon fs-2 mx-2"></i>
+                                                <div class="form-label mt-2">Return Date <br>
+                                                    <input type="text" class=" departure form-control form-control-sm"
+                                                        name="return-date" value="2025-09-11">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div id="Multicity" class="d-none">
+
+
+                                    <div id="city-list">
+                                        <!-- First city row -->
+                                        <div class="city-item">
+                                            <div class="d-flex gap-4">
+                                                <div class="from w-50">
+                                                    <i class="fas fa-plane-departure form-icon fs-2 mx-2"></i>
+                                                    <div class="flex-grow-1">
+                                                        <div class="form-label">From <br><span>DEL</span></div>
+                                                    </div>
+                                                </div>
+                                                <div class="to w-50">
+                                                    <i class="fas fa-plane-arrival form-icon fs-2 mx-2"></i>
+                                                    <div class="flex-grow-1">
+                                                        <div class="form-label">To <br><span>BOM</span></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="row mb-0">
+                                                <div class="col-6">
+                                                    <div class="form-box departure-date mb-0" data-bs-toggle="modal"
+                                                        data-bs-target="#calendarModal">
+                                                        <i class="fas fa-calendar-alt form-icon fs-2 mx-2"></i>
+                                                        <div class="form-label mt-2">
+                                                            Departure Date <br>
+                                                            <input type="text"
+                                                                class="form-control form-control-sm departure"
+                                                                name="departure-date" value="2025-09-11" readonly>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div>
+                                        <div class="form-box px-2 my-3 "
+                                            style="height: 44px; border: 1px dashed #007bd1;">
+                                            <div
+                                                class="form-label mb-1 d-flex align-items-center justify-content-center">
+                                                <button id="add-city-btn" class="bg-white border-0 primary-text">+ Add
+                                                    City</button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+
+
+
+                                <div class="form-box mb-3" data-bs-toggle="modal" data-bs-target="#travellerModal">
+                                    <i class="fas fa-user form-icon fs-2 mx-2"></i>
+                                    <div class="form-label mt-1">
+                                        Travellers & Class <br>
+                                        <div class="d-flex gap-2 mt-1">
+                                            <input type="text" name="travellers" id="travellerSummary"
+                                                class="form-control Travellers form-control-sm w-50" value="1"
+                                                placeholder="Travellers">
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                                <div class="form-label">Select a Fare Type
+                                </div>
+                                <div class="fare-scroll mb-2">
+                                    <button type="button" class="fare-btn">
+                                        <div class="fw-bold">Student</div>
+                                        <small>Extra discounts/baggage</small>
+                                    </button>
+                                    <button type="button" class="fare-btn">
+                                        <div class="fw-bold">Senior Citizen</div>
+                                        <small>Up to ₹600 off</small>
+                                    </button>
+                                    <button type="button" class="fare-btn">
+                                        <div class="fw-bold">Senior Citizen</div>
+                                        <small>Up to ₹600 off</small>
+                                    </button>
+                                    <button type="button" class="fare-btn">
+                                        <div class="fw-bold">Senior Citizen</div>
+                                        <small>Up to ₹600 off</small>
+                                    </button>
+                                </div>
+
+                                <!-- Search Button -->
+                                <button type="submit" class="search-btn mb-2">Modify</button>
+                            </form>
+
+
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modifyFilter" tabindex="-1" aria-labelledby="modifyModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h5 class="modal-title fs-4" id="modifyModalLabel">Filters</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+
+                <div class="modal-body">
+                    <div class="px-3 py-2" style="max-width: 400px;">
+
+                        <div class="mb-4">
+                            <h6 class="fw-bold mb-2">Stops</h6>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="stop0">
+                                <label class="form-check-label" for="stop0">0 stop (247)</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="stop1">
+                                <label class="form-check-label" for="stop1">1 stop (329)</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="stop2">
+                                <label class="form-check-label" for="stop2">2 stop (5)</label>
+                            </div>
+                        </div>
+
+                        <hr>
+
+                        <!-- Popular Airlines -->
+                        <div class="mb-4">
+                            <h6 class="fw-bold mb-2">Popular Airlines</h6>
+                            <div class="form-check d-flex align-items-center mb-2">
+                                <input class="form-check-input me-2" type="checkbox" id="indigo">
+                                <label class="form-check-label d-flex align-items-center" for="indigo">
+                                    <img src="images/indigo.png" alt="Indigo" width="20" class="me-2"> INDIGO
+                                </label>
+                            </div>
+                            <div class="form-check d-flex align-items-center mb-2">
+                                <input class="form-check-input me-2" type="checkbox" id="airIndia">
+                                <label class="form-check-label d-flex align-items-center" for="airIndia">
+                                    <img src="images/AI.png" alt="Air India" width="20" class="me-2"> AIR INDIA
+                                </label>
+                            </div>
+                            <div class="form-check d-flex align-items-center mb-2">
+                                <input class="form-check-input me-2" type="checkbox" id="airIndiaExpress">
+                                <label class="form-check-label d-flex align-items-center" for="airIndiaExpress">
+                                    <img src="images/IX.png" alt="Air India Express" width="20" class="me-2"> AIR INDIA
+                                    EXPRESS
+                                </label>
+                            </div>
+                            <div class="form-check d-flex align-items-center mb-2">
+                                <input class="form-check-input me-2" type="checkbox" id="akasa">
+                                <label class="form-check-label d-flex align-items-center" for="akasa">
+                                    <img src="images/QP.png" alt="Akasa Air" width="20" class="me-2"> AKASA AIR
+                                </label>
+                            </div>
+                            <div class="form-check d-flex align-items-center">
+                                <input class="form-check-input me-2" type="checkbox" id="spicejet">
+                                <label class="form-check-label d-flex align-items-center" for="spicejet">
+                                    <img src="images/SG.png" alt="Spicejet" width="20" class="me-2"> SPICEJET
+                                </label>
+                            </div>
+                        </div>
+
+                        <hr>
+
+                        <!-- Price Range -->
+                        <div class="mb-4">
+                            <h6 class="fw-bold mb-2">Price Range</h6>
+                            <div class="mb-2 text-muted">INR 3793 - INR 27324</div>
+                            <input type="range" class="form-range" min="3793" max="27324" id="priceRange">
+                        </div>
+
+                        <hr>
+
+                        <!-- Depart Range -->
+                        <div class="mb-4">
+                            <h6 class="fw-bold mb-2">Depart Range</h6>
+                            <div class="mb-2 text-muted">Departure 1:00 - 23:00</div>
+                            <input type="range" class="form-range" min="1" max="23" id="departRange">
+                        </div>
+
+                        <hr>
+
+                        <!-- Arrival Range -->
+                        <div class="mb-4">
+                            <h6 class="fw-bold mb-2">Arrival Range</h6>
+                            <div class="mb-2 text-muted">Arrival 0:00 - 23:00</div>
+                            <input type="range" class="form-range" min="0" max="23" id="arrivalRange">
+                        </div>
+
+                        <hr>
+
+                        <!-- Departure Time Slots -->
+                        <div>
+                            <h6 class="fw-bold mb-2">Departure Time (DEL-New Delhi)</h6>
+                            <div class="d-grid gap-2">
+                                <button class="btn btn-outline-secondary btn-sm">Early Morning<br><small>Before 6
+                                        AM</small></button>
+                                <button class="btn btn-outline-secondary btn-sm">Morning<br><small>6 AM – 12
+                                        PM</small></button>
+                                <button class="btn btn-outline-secondary btn-sm">Mid Day To Evening<br><small>12 PM – 6
+                                        PM</small></button>
+                                <button class="btn btn-outline-secondary btn-sm">Evening to Night<br><small>After 6
+                                        PM</small></button>
+                            </div>
+                        </div>
+
+                        <button class="btn primary-btn mt-3 px-5 rounded">
+                            Filter
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <footer class="app-footer d-flex justify-content-around align-items-center shadow-lg">
+        <div class="footer-item active">
+            <i class="fas fa-home"></i>
+            <span>Home</span>
+        </div>
+        <div class="footer-item">
+            <i class="fas fa-ticket-alt"></i>
+            <span>My Trips</span>
+        </div>
+        <div class="footer-item">
+            <i class="fas fa-user"></i>
+            <span>Contact</span>
+        </div>
+        <div class="footer-item">
+            <i class="fas fa-percent"></i>
+            <span>Offers</span>
+        </div>
+    </footer>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+        crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+    <script>
+        document.querySelectorAll('.day-tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                document.querySelectorAll('.day-tab').forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+            });
+        });
+    </script>
+
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            let adult = 1, child = 0, infant = 0;
+            let cabinClass = 'Economy';
+
+            const updateCounts = () => {
+                document.getElementById('adultCount').textContent = adult;
+                document.getElementById('childCount').textContent = child;
+                document.getElementById('infantCount').textContent = infant;
+            };
+
+            // Adults
+            document.getElementById('adultPlus').addEventListener('click', () => { if (adult < 9) adult++; updateCounts(); });
+            document.getElementById('adultMinus').addEventListener('click', () => { if (adult > 1) adult--; updateCounts(); });
+
+            // Children
+            document.getElementById('childPlus').addEventListener('click', () => { if (child < 9) child++; updateCounts(); });
+            document.getElementById('childMinus').addEventListener('click', () => { if (child > 0) child--; updateCounts(); });
+
+            // Infants
+            document.getElementById('infantPlus').addEventListener('click', () => { if (infant < 9) infant++; updateCounts(); });
+            document.getElementById('infantMinus').addEventListener('click', () => { if (infant > 0) infant--; updateCounts(); });
+
+            // Cabin Class
+            document.querySelectorAll('.cabin-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    document.querySelectorAll('.cabin-btn').forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    cabinClass = btn.getAttribute('data-class');
+                });
+            });
+
+            // DONE button updates main form
+            document.getElementById('travellerDoneBtn').addEventListener('click', () => {
+                let summary = `${adult} Adult`;
+                if (child > 0) summary += `, ${child} Child`;
+                if (infant > 0) summary += `, ${infant} Infant`;
+                summary += `, ${cabinClass}`;
+                document.getElementById('travellerSummary').value = summary;
+            });
+        });
+    </script>
+
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const modeButtons = document.querySelectorAll('.mode-btn');
+            const addReturnDiv = document.querySelector('.form-box.return-date'); // First one
+            const returnDateDiv = document.querySelector('.form-box.d-none');     // Second one
+
+            modeButtons.forEach(button => {
+                button.addEventListener('click', function () {
+                    const mode = this.getAttribute('data-mode');
+
+                    if (mode === 'round') {
+                        addReturnDiv.classList.add('d-none');     // Hide "+ Add Return Date"
+                        returnDateDiv.classList.remove('d-none'); // Show actual return date
+                    } else {
+                        addReturnDiv.classList.remove('d-none');  // Show "+ Add Return Date"
+                        returnDateDiv.classList.add('d-none');    // Hide actual return date
+                    }
+
+                    // Update active class
+                    modeButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
+        });
+    </script>
+
+
+    <script>
+        const prices = {
+            "2025-07-1": 7651,
+            "2025-07-2": 7651,
+            "2025-07-3": 7651,
+            "2025-07-4": 7651,
+            "2025-07-5": 7651,
+            "2025-07-6": 7651,
+            "2025-07-7": 7651,
+            "2025-07-8": 7651,
+            "2025-07-9": 7651,
+            "2025-07-10": 7651,
+            "2025-07-11": 7651,
+            "2025-07-12": 7651,
+            "2025-07-13": 7651,
+            "2025-07-14": 5325,
+            "2025-07-15": 4071,
+            "2025-07-26": 3823,
+            "2025-08-08": 4646,
+            "2025-08-16": 4944
+        };
+
+        let selectedDate = '';
+        const departureInput = document.createElement('input');
+        departureInput.type = 'hidden';
+        document.body.appendChild(departureInput);
+
+        let activeDepartureInput = null;
+
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.departure').forEach(input => {
+                input.addEventListener('click', () => {
+                    activeDepartureInput = input;
+                    const modalEl = document.getElementById('calendarModal');
+                    const modalInstance = new bootstrap.Modal(modalEl);
+                    modalInstance.show();
+                });
+            });
+
+            renderCalendars();
+        });
+
+        let currentMonth = 6;
+        let currentYear = 2025;
+
+        function renderCalendars() {
+            renderCalendarMonth(currentMonth, currentYear, 'calendarGrid1');
+            const nextMonth = (currentMonth + 1) % 12;
+            const nextYear = currentMonth === 11 ? currentYear + 1 : currentYear;
+            renderCalendarMonth(nextMonth, nextYear, 'calendarGrid2');
+            renderCalendarMonth(nextMonth, nextYear, 'calendarGrid3');
+
+            document.getElementById('month1').querySelector('.month-header').textContent =
+                new Date(currentYear, currentMonth).toLocaleString('default', { month: 'long', year: 'numeric' });
+            document.getElementById('month2').querySelector('.month-header').textContent =
+                new Date(nextYear, nextMonth).toLocaleString('default', { month: 'long', year: 'numeric' });
+        }
+
+        function renderCalendarMonth(month, year, gridId) {
+            const grid = document.getElementById(gridId);
+            grid.innerHTML = '';
+
+            const weekdays = ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'];
+            weekdays.forEach(day => {
+                grid.innerHTML += `<div style="font-weight:bold;color:#555;">${day}</div>`;
+            });
+
+            const firstDay = new Date(year, month, 1).getDay();
+            const daysInMonth = new Date(year, month + 1, 0).getDate();
+
+            for (let i = 0; i < firstDay; i++) {
+                grid.innerHTML += `<div></div>`;
+            }
+
+            for (let day = 1; day <= daysInMonth; day++) {
+                const dateStr = `${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
+                const price = prices[dateStr] ? `₹${prices[dateStr].toLocaleString()}` : '';
+
+                const isToday = dateStr === new Date().toISOString().split('T')[0];
+                const isSelected = dateStr === selectedDate;
+
+                grid.innerHTML += `
+        <div class="calendar-day ${isToday ? 'today' : ''} ${isSelected ? 'selected' : ''}" data-date="${dateStr}">
+          ${day}
+          ${price ? `<div class="price">${price}</div>` : ''}
+        </div>`;
+            }
+
+            grid.querySelectorAll('.calendar-day').forEach(el => {
+                el.addEventListener('click', () => {
+                    selectedDate = el.getAttribute('data-date');
+
+                    if (activeDepartureInput) {
+                        activeDepartureInput.value = selectedDate;
+                    }
+
+                    const modalEl = document.getElementById('calendarModal');
+                    if (modalEl) {
+                        const modalInstance = bootstrap.Modal.getInstance(modalEl);
+                        if (modalInstance) {
+                            modalInstance.hide();
+                            document.querySelectorAll('.modal-backdrop').forEach(el => el.remove());
+
+
+                        }
+                    }
+                });
+
+
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            renderCalendars();
+        });
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            let activeLocationInput = null;
+            const locationModalEl = document.getElementById('locationModal');
+            const locationModal = new bootstrap.Modal(locationModalEl);
+
+
+            document.querySelectorAll('.from input, .to input').forEach(input => {
+                input.addEventListener('click', () => {
+                    activeLocationInput = input;
+                    locationModal.show();
+                });
+            });
+
+
+            locationModalEl.addEventListener('click', (e) => {
+                const listItem = e.target.closest('.list-group-item');
+                if (!listItem) return;
+
+                // Extract city and airport code from clicked item
+                const city = listItem.querySelector('div > div').textContent.trim();
+                const code = listItem.querySelector('.fw-bold').textContent.trim();
+
+                if (activeLocationInput) {
+                    // Example format: DEL-Delhi
+                    activeLocationInput.value = `${code}-${city}`;
+                }
+
+                // Close the modal
+                locationModal.hide();
+            });
+        });
+    </script>
+
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const MAX_CITIES = 6;
+            const cityList = document.getElementById('city-list');
+            const addButton = document.getElementById('add-city-btn');
+
+            const cityTemplate = `
+    <div class="city-item mt-3">
+      <div class="d-flex gap-4">
+        <div class="from w-50">
+          <i class="fas fa-plane-departure form-icon fs-2 mx-2"></i>
+          <div class="flex-grow-1">
+            <div class="form-label">From <br><span>DEL</span></div>
+          </div>
+        </div>
+        <div class="to w-50">
+          <i class="fas fa-plane-arrival form-icon fs-2 mx-2"></i>
+          <div class="flex-grow-1">
+            <div class="form-label">To <br><span>BOM</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="row mb-0">
+        <div class="col-6">
+         <div class="form-box departure-date mb-0" data-bs-toggle="modal"
+                                        data-bs-target="#calendarModal">
+                                        <i class="fas fa-calendar-alt form-icon fs-2 mx-2"></i>
+                                        <div class="form-label mt-2">
+                                            Departure Date <br>
+                                            <input type="text" class="form-control form-control-sm departure"
+                                                name="departure-date" value="2025-09-11" readonly>
+                                        </div>
+                                    </div>
+        </div>
+        <div class="col-6">
+          <div class="form-box mb-0 remove-btn" style="cursor: pointer; height: 44px;">
+            <i class="fa-solid fa-xmark form-icon fs-2 mx-2"></i>
+            <div class="form-label">Remove</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  `;
+
+            addButton.addEventListener('click', function (e) {
+                e.preventDefault();
+                const currentCount = cityList.querySelectorAll('.city-item').length;
+
+                if (currentCount >= MAX_CITIES) {
+                    alert('You can add a maximum of 6 cities.');
+                    return;
+                }
+
+                const newCity = document.createElement('div');
+                newCity.innerHTML = cityTemplate.trim();
+
+                // Add remove functionality to this new city
+                const removeButton = newCity.querySelector('.remove-btn');
+                removeButton.addEventListener('click', function () {
+                    newCity.remove();
+                });
+
+                cityList.appendChild(newCity);
+            });
+        });
+    </script>
+
+
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true,
+            easing: 'ease-in-out'
+        });
+    </script>
+
+
+    <script>
+        const footerItems = document.querySelectorAll('.footer-item');
+
+        footerItems.forEach(item => {
+            item.addEventListener('click', () => {
+                footerItems.forEach(i => i.classList.remove('active'));
+                item.classList.add('active');
+            });
+        });
+    </script>
+
+    <script>
+        const modeButtons = document.querySelectorAll('.mode-btn');
+        const returnDateGroup = document.getElementById('returnDateGroup');
+
+        modeButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                modeButtons.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                const mode = btn.getAttribute('data-mode');
+                if (mode === 'round') {
+                    returnDateGroup.classList.remove('d-none');
+                } else {
+                    returnDateGroup.classList.add('d-none');
+                }
+            });
+        });
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const modeButtons = document.querySelectorAll('.mode-btn');
+            const oneRoundSection = document.getElementById('one-round-way-form');
+            const multiCitySection = document.getElementById('Multicity');
+
+            modeButtons.forEach(button => {
+                button.addEventListener('click', function () {
+                    const mode = this.getAttribute('data-mode');
+
+                    if (mode === 'multicity') {
+                        oneRoundSection.classList.add('d-none');
+                        multiCitySection.classList.remove('d-none');
+                    } else {
+                        oneRoundSection.classList.remove('d-none');
+                        multiCitySection.classList.add('d-none');
+                    }
+
+                    // Optional: update active class for buttons
+                    modeButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
+        });
+    </script>
+
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const locationModal = new bootstrap.Modal(document.getElementById('locationModal'));
+
+
+            document.querySelectorAll('.from').forEach(fromEl => {
+                fromEl.addEventListener('click', () => {
+                    locationModal.show();
+                });
+            });
+
+
+            document.querySelectorAll('.to').forEach(toEl => {
+                toEl.addEventListener('click', () => {
+                    locationModal.show();
+                });
+            });
+        });
+    </script>
+
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const exchangeButton = document.querySelector('.exchange-arrow');
+            const fromInput = document.querySelector('.from input');
+            const toInput = document.querySelector('.to input');
+
+            exchangeButton.addEventListener('click', (e) => {
+                e.preventDefault();
+                // Swap the values
+                const temp = fromInput.value;
+                fromInput.value = toInput.value;
+                toInput.value = temp;
+            });
+        });
+    </script>
+
+
+    <script>
+        const departureBtn = document.getElementById('departureBtn');
+        const returnBtn = document.getElementById('returnBtn');
+
+        departureBtn.addEventListener('click', () => {
+            departureBtn.classList.add('active');
+            returnBtn.classList.remove('active');
+        });
+
+        returnBtn.addEventListener('click', () => {
+            returnBtn.classList.add('active');
+            departureBtn.classList.remove('active');
+        });
+    </script>
+
+</body>
+
+</html>

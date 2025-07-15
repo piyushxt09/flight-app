@@ -643,7 +643,7 @@
    .form-section-flight .form-box .Travellers {
        font-size: 16px !important;
        width: 280px !important;
-      margin-top: -6px;
+       margin-top: -6px;
 
    }
 
@@ -764,7 +764,6 @@
 
    #cabinOptions {
        -ms-overflow-style: none;
-       /* IE and Edge */
        scrollbar-width: none;
 
    }
@@ -775,4 +774,101 @@
 
    .modal-backdrop {
        display: none !important;
+   }
+
+   /* ------------------------------search --------------------- */
+
+   .header-heading-search p {
+       font-size: 10px;
+   }
+
+
+
+   .day-tabs-container {
+       overflow-x: auto;
+       padding: 8px 20;
+
+       scrollbar-width: none;
+
+       -ms-overflow-style: none;
+
+   }
+
+   .day-tabs-container::-webkit-scrollbar {
+       display: none;
+
+   }
+
+
+   .day-tabs-container .day-tabs {
+       display: flex;
+       gap: 20px;
+       min-width: max-content;
+   }
+
+   .day-tabs-container .day-tab {
+       display: flex;
+       flex-direction: column;
+       align-items: center;
+       padding: 8px 16px;
+       border: 1px solid #ccc;
+       border-radius: 15px;
+       background: #fff;
+       cursor: pointer;
+       flex-shrink: 0;
+       transition: border-color 0.3s, color 0.3s;
+   }
+
+   .day-tabs-container .day-tab .day {
+       font-size: 12px;
+       color: #555;
+   }
+
+   .day-tabs-container .day-tab .date {
+       font-size: 20px;
+       font-weight: 700;
+       color: #000;
+   }
+
+   .day-tabs-container .day-tab.active {
+       border-color: var(--primary-color);
+       color: var(--primary-color);
+   }
+
+   .day-tabs-container .day-tab.active .day,
+   .day-tabs-container .day-tab.active .date {
+       color: var(--primary-color);
+   }
+
+   .day-tabs-container .day-tab:hover {
+       border-color: var(--primary-color);
+   }
+
+
+   .border-dashed {
+       border-top: 1px dashed #ccc !important;
+   }
+
+
+   .toggle-btn-group {
+       border: 2px solid var(--primary-color);
+       border-radius: 8px;
+       overflow: hidden;
+       display: flex;
+   }
+
+   .toggle-btn {
+       flex: 1;
+       padding: 3px 20px;
+       border: none;
+       background: white;
+       color: #6c757d;
+       border-radius: 4px;
+       font-weight: 500;
+       transition: background-color 0.2s, color 0.2s;
+   }
+
+   .toggle-btn.active {
+       background-color: var(--primary-color);
+       color: white;
    }
