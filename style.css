@@ -25,6 +25,13 @@
        --light-color: #eeeeee;
    }
 
+   .my-button {
+       background-color: var(--primary-color) !important;
+       border: 1px solid var(--primary-color) !important;
+       color: white !important;
+       transition: 0.3s;
+   }
+
    .text-black {
        color: #272727 !important;
    }
@@ -871,4 +878,118 @@
    .toggle-btn.active {
        background-color: var(--primary-color);
        color: white;
+   }
+
+   .flight-number {
+       font-size: 10px;
+   }
+
+
+   .pagination {
+       display: flex;
+       gap: 8px;
+       justify-content: center;
+       align-items: center;
+       margin: 20px;
+   }
+
+   .page-btn {
+       border: 1px solid #ddd;
+       background-color: white;
+       color: black;
+       padding: 8px 14px;
+       border-radius: 8px;
+       cursor: pointer;
+       font-size: 16px;
+       transition: background-color 0.2s, border-color 0.2s;
+   }
+
+   .page-btn:hover {
+       border-color: #aaa;
+   }
+
+   .page-btn.active {
+       background-color: var(--primary-color);
+       color: white;
+       border-color: var(--primary-color);
+   }
+
+
+
+   #flightModal .card {
+       border: none;
+       padding-top: 10px;
+   }
+
+   #flightModal .flight-card {
+       box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+       padding: 10px;
+       border: 2px solid var(--primary-color);
+       border-radius: 10px;
+   }
+
+   #flightModal .section-title {
+       font-weight: bold;
+       margin-bottom: 10px;
+   }
+
+   #flightModal .text-green {
+       color: #009688;
+       font-weight: 500;
+   }
+
+   #flightModal .text-orange {
+       color: #ff9800;
+       font-weight: 500;
+   }
+
+   #flightModal .text-red {
+       color: #f44336;
+       font-weight: 500;
+   }
+
+   .modal-xxl {
+       max-width: 90vw !important;
+       /* Adjust as needed */
+       width: 90% !important;
+   }
+
+
+   #flightModal .modal-header h5 {
+       font-size: 12px;
+   }
+
+   #flightModal img {
+       width: 20px;
+   }
+
+   #flightModal .swiper {
+       padding-bottom: 30px;
+   }
+
+   #flightModal .swiper-pagination {
+       top: 450px;
+   }
+
+   #flightModal .swiper-pagination-bullet-active {
+       background: var(--primary-color);
+   }
+
+
+   #flightModal .swiper-button-next,
+   #flightModal .swiper-button-prev {
+       color: var(--primary-color);
+
+   }
+
+   #flightModal .swiper-button-next:after,
+   #flightModal .swiper-rtl .swiper-button-prev:after {
+       font-size: 25px !important;
+       font-weight: 600;
+   }
+
+   #flightModal .swiper-button-prev:after,
+   #flightModal .swiper-rtl .swiper-button-prev:after {
+       font-size: 25px !important;
+       font-weight: 600;
    }
