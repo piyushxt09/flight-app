@@ -1145,7 +1145,7 @@
 
 
    .seat-map {
-      padding: 0px 10px;
+       padding: 0px 10px;
        background-color: #fff;
 
        border-radius: 30px 30px 50% 50%;
@@ -1229,4 +1229,124 @@
        padding: 10px;
        border: none;
        margin-top: 20px;
+   }
+
+
+
+   .contact-box-container {
+       border-radius: 10px;
+       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+       padding: 10px;
+       background-color: white;
+   }
+
+   .contact-box-container .contact-icon {
+       font-size: 1.2rem;
+       color: white;
+       background-color: var(--primary-color);
+       padding: 10px;
+       border-radius: 50%;
+       width: 45px;
+       height: 45px;
+       display: flex;
+       align-items: center;
+       justify-content: center;
+   }
+
+
+
+   .traveller-box {
+       border: 1px solid var(--primary-color);
+       border-radius: 10px;
+       padding: 14px 10px;
+       background-color: white;
+       box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
+   }
+
+   .traveller-header {
+       border-radius: 8px;
+       display: flex;
+       align-items: center;
+       font-weight: bold;
+       margin-bottom: 0.75rem;
+   }
+
+   .traveller-header i {
+       color: var(--primary-color);
+       margin-right: 10px;
+   }
+
+   .traveller-info {
+       border-radius: 8px;
+   }
+
+
+
+   .payment-box-container {
+       border: 1px solid var(--primary-color);
+       border-radius: 10px;
+       padding: 15px 10px;
+       background-color: white;
+   }
+
+   .payment-box-container .payment-option {
+       border: 1px solid #ddd;
+       border-radius: 10px;
+       padding: 5px;
+       text-align: center;
+       cursor: pointer;
+       transition: all 0.2s;
+       box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
+   }
+
+   .payment-box-container .payment-option:hover {
+       box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+   }
+
+   .payment-box-container .payment-option input[type="radio"] {
+       display: none;
+   }
+
+   .payment-box-container .payment-option i {
+       font-size: 16px;
+   }
+
+   .payment-box-container .payment-option label {
+       display: block;
+       cursor: pointer;
+   }
+
+   .payment-box-container .payment-option input[type="radio"]+label {
+       color: black;
+       border: 1px solid rgb(255, 255, 255);
+   }
+
+   .payment-box-container .payment-option input[type="radio"]:checked+label {
+    
+       border-radius: 10px;
+       color: var(--primary-color);
+   }
+
+   .payment-box-container .payment-radio-circle {
+       width: 21px;
+       height: 21px;
+       border-radius: 50%;
+       border: 2px solid #aaa;
+       display: inline-block;
+       position: relative;
+   }
+
+   .payment-box-container .payment-option input[type="radio"]:checked+label .payment-radio-circle {
+       border-color: var(--primary-color);
+   }
+
+   .payment-box-container .payment-option input[type="radio"]:checked+label .payment-radio-circle::after {
+       content: "";
+       width: 9px;
+       height: 9px;
+       background-color: var(--primary-color);
+       border-radius: 50%;
+       position: absolute;
+       top: 4px;
+       left: 4px;
    }
