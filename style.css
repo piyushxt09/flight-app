@@ -1322,7 +1322,7 @@
    }
 
    .payment-box-container .payment-option input[type="radio"]:checked+label {
-    
+
        border-radius: 10px;
        color: var(--primary-color);
    }
@@ -1349,4 +1349,22 @@
        position: absolute;
        top: 4px;
        left: 4px;
+   }
+
+
+
+   .card-success-container {
+       margin: 100px auto;
+       text-align: center;
+       padding: 30px;
+       border-radius: 15px;
+       align-items: center;
+       display: flex;
+       flex-direction: column;
+       justify-content: center;
+       box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+   }
+
+    .card-success-container .success-icon {
+       margin-bottom: 20px;
    }
