@@ -1365,6 +1365,13 @@
        box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
    }
 
-    .card-success-container .success-icon {
+   .card-success-container .success-icon {
        margin-bottom: 20px;
    }
+
+.calendar-day.past-day {
+       background-color: #f0f0f0;
+       color: #aaa;
+       pointer-events: none;
+   }
+
