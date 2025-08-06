@@ -1573,3 +1573,214 @@
    .modal.right-half .modal-body {
        overflow-y: auto;
    }
+
+
+   /* -------------promo code----------------- */
+   .promo-wrapper {
+       border: 1px solid #e0e0e0;
+       border-radius: 12px;
+       padding: 16px;
+       max-width: 380px;
+       font-family: 'Segoe UI', sans-serif;
+       background: #fff;
+   }
+
+   .promo-title {
+       font-size: 16px;
+       font-weight: 600;
+       margin-bottom: 12px;
+       display: flex;
+       align-items: center;
+   }
+
+   .promo-input-group {
+       display: flex;
+       gap: 8px;
+       margin-bottom: 12px;
+   }
+
+   .promo-input-group input {
+       flex: 1;
+       padding: 8px 12px;
+       font-size: 14px;
+       border: 1px solid #ccc;
+       border-radius: 6px;
+   }
+
+   .promo-input-group button {
+       background-color: var(--primary-color);
+       color: white;
+       border: none;
+       padding: 8px 14px;
+       border-radius: 6px;
+       cursor: pointer;
+       font-size: 14px;
+   }
+
+   .promo-tabs {
+       display: flex;
+       gap: 8px;
+       margin-bottom: 16px;
+   }
+
+   .promo-tabs .tab {
+       flex: 1;
+       border: 1px solid #ccc;
+       background: #f9f9f9;
+       padding: 6px 0;
+       border-radius: 20px;
+       font-size: 14px;
+       cursor: pointer;
+   }
+
+   .promo-tabs .tab.active {
+       background: var(--primary-color);
+       color: #fff;
+       border-color: var(--primary-color);
+   }
+
+   .promo-offer-list {
+       display: flex;
+       flex-direction: column;
+       gap: 12px;
+   }
+
+   .promo-offer {
+       border-top: 1px solid #eee;
+       padding-top: 12px;
+       display: flex;
+       gap: 12px;
+       align-items: flex-start;
+       justify-content: space-between;
+   }
+
+   .promo-icon {
+       font-size: 18px;
+       color: green;
+       margin-top: 4px;
+   }
+
+   .promo-icon.bank {
+       color: #b63bff;
+   }
+
+   .promo-details {
+       flex: 1;
+   }
+
+   .promo-code {
+       background: #f0f3ff;
+       color: #333;
+       font-weight: 600;
+       padding: 4px 8px;
+       border-radius: 6px;
+       display: inline-block;
+       font-size: 14px;
+       margin-bottom: 4px;
+   }
+
+   .promo-discount {
+       color: #008c00;
+       font-weight: 500;
+       font-size: 14px;
+       margin-bottom: 4px;
+   }
+
+   .promo-desc {
+       font-size: 13px;
+       color: #555;
+   }
+
+   .promo-desc .link {
+       color: var(--primary-color);
+       cursor: pointer;
+   }
+
+   .apply-btn {
+       font-size: 14px;
+       color: var(--primary-color);
+       background: transparent;
+       border: none;
+       cursor: pointer;
+       font-weight: 600;
+   }
+
+   .meals-baggage .option-card {
+       border: 1px solid #ddd;
+       border-radius: 8px;
+       text-align: center;
+       cursor: pointer;
+       display: flex;
+       transition: 0.2s;
+       width: 200px ;
+       align-items: center;
+       font-size: 12px;
+
+   }
+
+   .baggage-meal .option-card {
+       flex-direction: column;
+       padding: 5px 0px;
+       width: auto !important;
+   }
+
+
+   .meals-baggage .option-card img {
+       max-height: 50px;
+       object-fit: contain;
+       border-radius: 8px;
+       padding: 1px 1px;
+       margin-bottom: 0px !important;
+   }
+
+
+   .meals-baggage .option-card:hover {
+       background-color: #f5f5f5;
+   }
+
+   .meals-baggage .section-title i {
+       margin-right: 8px;
+   }
+
+   .meals-baggage .extra-link {
+       display: flex;
+       align-items: center;
+       justify-content: center;
+       border: 1px solid #ddd;
+       border-radius: 8px;
+       height: 100%;
+       padding: 10px;
+       cursor: pointer;
+   }
+
+   .meals-baggage .extra-link:hover {
+       background-color: #f5f5f5;
+   }
+
+
+   #mealModal .custom-scroll {
+       max-height: 80vh;
+       overflow-y: auto;
+   }
+
+   #baggageModal .custom-scroll {
+       max-height: 80vh;
+       overflow-y: auto;
+   }
+
+   #mealModal .meal-item .small {
+       font-size: 12px;
+   }
+
+   .meal-scroll-container {
+       overflow-x: auto;
+       white-space: nowrap;
+       -webkit-overflow-scrolling: touch;
+       scrollbar-width: none;
+       /* Firefox */
+   }
+
+   .meal-scroll-container::-webkit-scrollbar {
+       display: none;
+       /* Chrome, Safari */
+   }

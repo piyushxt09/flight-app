@@ -157,25 +157,6 @@
                     <input type="date" class="form-control" />
                 </div>
 
-                <div class="mb-3">
-                    <label class="form-label">DEL - Bom (Select Baggage)</label>
-                    <select class="form-select">
-                        <option>No Baggage</option>
-                        <option>15 kg</option>
-                        <option>20 kg</option>
-                        <option>25 kg</option>
-                    </select>
-                </div>
-
-                <div class="mb-3">
-                    <label class="form-label">DEL - Bom (Select Meal)</label>
-                    <select class="form-select">
-                        <option>No Meal</option>
-                        <option>Vegetarian</option>
-                        <option>Non-Vegetarian</option>
-                        <option>Jain Meal</option>
-                    </select>
-                </div>
 
                 <div class="section-divider"></div>
 
@@ -215,12 +196,120 @@
                     </div>
                 </div>
             </form>
+        </div>
+
+        <div class="meals-baggage my-3">
+
+            <!-- Meals Section -->
+            <div class="mb-4">
+                <div class="section-title mb-2">
+                    <h5 class="mb-0"><i class="fas fa-utensils"></i> Add delicious meals</h5>
+                    <p class="text-success small mb-1">Meals are cheaper when pre-booked</p>
+                    <p class="small mb-0 fw-semibold text-secondary ">Onward DEL → BOM</p>
+                </div>
+
+                <div class="d-flex gap-2 meal-scroll-container">
+                    <div class="">
+                        <div class="option-card" style="width: 80px;">
+                            <div class="py-2 px-2">
+                                No meal
+                                <div>
+                                    ₹0
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="">
+                        <div class="option-card">
+                            <img src="images/AGSW.webp" alt="India By Indi" class="img-fluid mb-2">
+                            <div class="py-2 px-4 text-start">
+                                #IndiaByIndi...<br>
+                                <div>
+                                    ₹400
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="">
+                        <div class="option-card">
+                            <img src="images/VCSW.webp" alt="Vegan Special" class="img-fluid mb-2">
+                            <div class="py-2 px-4 text-start">
+                                Vegan Special
+                                <div>
+                                    ₹400
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="">
+                        <div class="option-card">
+                            <img src="images/VGAN.webp" alt="Jain Special" class="img-fluid mb-2">
+                            <div class="py-2 px-4 text-start">
+                                Jain Special
+                                <div>
+                                    ₹400
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="">
+                        <div class="extra-link primary-text small" data-bs-toggle="modal" data-bs-target="#mealModal">
+                            +5 options
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Extra Luggage Section -->
+            <div class="">
+                <div class="section-title mb-2">
+                    <h5 class="mb-0"><i class="fas fa-suitcase-rolling"></i> Add Extra Luggage</h5>
+                    <p class="text-success small mb-1">Baggage is cheaper when pre-booked</p>
+                    <p class="small mb-0 fw-semibold text-secondary">Onward DEL → BOM</p>
+                </div>
+
+                <div class="d-flex gap-2 baggage-meal meal-scroll-container">
+                    <div class="col-3 col-md-2">
+                        <div class="option-card">
+                            <div class=""> 
+                                Default
+                                <div>
+                                    0
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-5 col-md-2">
+                        <div class="option-card flex-column  text-start">
+                            Additional 3 KG<strong>₹1,750</strong></div>
+                    </div>
+                    <div class="col-5 col-md-2 flex-column text-start ">
+                        <div class="option-card">Additional 5 KG
+                            <strong>₹2,900</strong>
+                        </div>
+                    </div>
+                    <div class="col-5 col-md-2 flex-column text-start ">
+                        <div class="option-card">Additional 10 KG
+                            <strong>₹5,800</strong>
+                        </div>
+                    </div>
+                    <div class="col-5 col-md-2 flex-column">
+                        <div class="extra-link primary-text small" data-bs-toggle="modal" data-bs-target="#baggageModal">
+                            +3 options
+                        </div>
+                    </div>
+                </div>
+            </div>
 
         </div>
+
     </div>
 
+
+
     <div class="container">
-        <div  class="select-seat-box d-flex justify-content-between align-items-center p-2 mb-3" data-aos="fade-down" data-bs-target="#SeatMapModal" data-bs-toggle="modal">
+        <div class="select-seat-box d-flex justify-content-between align-items-center p-2 mb-3" data-aos="fade-down"
+            data-bs-target="#SeatMapModal" data-bs-toggle="modal">
             <span class="fw-semibold">Select Your Seat</span>
             <i class="fas fa-chevron-right"></i>
         </div>
@@ -276,7 +365,7 @@
     <div class="container amount-final" data-aos="fade-right">
         <div class=" d-flex justify-content-between align-items-center">
             <h2 class="fw-medium mb-0 ms-3 display-5">$1,400</h2>
-            <button class="primary-btn"  onclick="window.location.href='review-one-way.html'">Book Now</button>
+            <button class="primary-btn" onclick="window.location.href='review-one-way.html'">Book Now</button>
         </div>
 
 
@@ -343,31 +432,31 @@
                             <button class="seat available">6C</button>
                             <button class="seat available">6D</button>
                         </div>
-                         <div class="seat-row">
+                        <div class="seat-row">
                             <button class="seat available">7A</button>
                             <button class="seat reserved">7B</button>
                             <button class="seat available">7C</button>
                             <button class="seat reserved">7D</button>
                         </div>
-                         <div class="seat-row">
+                        <div class="seat-row">
                             <button class="seat reserved">8A</button>
                             <button class="seat available">8B</button>
                             <button class="seat reserved">8C</button>
                             <button class="seat available">8D</button>
                         </div>
-                         <div class="seat-row">
+                        <div class="seat-row">
                             <button class="seat available">9A</button>
                             <button class="seat available">9B</button>
                             <button class="seat available">9C</button>
                             <button class="seat reserved">9D</button>
                         </div>
-                         <div class="seat-row">
+                        <div class="seat-row">
                             <button class="seat available">10A</button>
                             <button class="seat reserved">10B</button>
                             <button class="seat reserved">10C</button>
                             <button class="seat available">10D</button>
                         </div>
-                       
+
                         <button class="confirm-btn " data-bs-dismiss="modal" aria-label="Close">Confirm</button>
                     </div>
                 </div>
@@ -425,50 +514,277 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <div class="promo-code-container position-sticky" style="top: 110px;">
-                        <div>
-                            <input type="text" id="promoInput" placeholder="YOUR PROMO CODE" />
+                    <div class="promo-wrapper">
+                        <h5 class="promo-title">
+                            <i class="fas fa-gift me-2"></i>Apply coupon or gift card
+                        </h5>
+
+                        <div class="promo-input-group">
+                            <input type="text" id="promoInput" placeholder="Coupon/Gift card" />
                             <button onclick="applyPromo()">Apply</button>
                         </div>
-                        <div class="promo-code-list">
-                            <div class="promo-code-item" id="item1">
-                                <div>
-                                    <p class="promo-head">Wanderlust Hotel Agency</p>
-                                    <p>15% Off on All-Inclusive Vacation Packages</p>
-                                    <span id="promo1">WANDER15 <button class="copy-btn"
-                                            onclick="togglePromo('promo1', 'item1', this)"><i
-                                                class="fas fa-copy"></i></button></span>
-                                </div>
 
+                        <div class="promo-tabs">
+                            <button class="tab active">All offers</button>
+                            <button class="tab">Bank offers</button>
+                        </div>
+
+                        <div class="promo-offer-list">
+                            <!-- Offer 1 -->
+                            <div class="promo-offer">
+                                <div class="promo-icon"><i class="fas fa-tag"></i></div>
+                                <div class="promo-details">
+                                    <div class="promo-code">CT4WORK</div>
+                                    <div class="promo-discount">Flat ₹345 off</div>
+                                    <div class="promo-desc">Additional 5% cashback with Flipkart Axis Credit Card <span
+                                            class="link">Know more</span></div>
+                                </div>
+                                <button class="apply-btn">Apply</button>
                             </div>
 
-                            <div class="promo-code-item" id="item2">
-                                <div>
-                                    <p class="promo-head">Wanderlust Hotel Agency</p>
-                                    <p>15% Off on All-Inclusive Vacation Packages</p>
-                                    <span id="promo2">WANDER15 <button class="copy-btn"
-                                            onclick="togglePromo('promo2', 'item2', this)"><i
-                                                class="fas fa-copy"></i></button></span>
+                            <!-- Offer 2 -->
+                            <div class="promo-offer">
+                                <div class="promo-icon"><i class="fas fa-tag"></i></div>
+                                <div class="promo-details">
+                                    <div class="promo-code">CTUPI</div>
+                                    <div class="promo-discount">Flat ₹290 off</div>
+                                    <div class="promo-desc">Applicable on UPI payment <span class="link">Know
+                                            more</span></div>
                                 </div>
-
+                                <button class="apply-btn">Apply</button>
                             </div>
 
-                            <div class="promo-code-item" id="item3">
-                                <div>
-                                    <p class="promo-head">Wanderlust Hotel Agency</p>
-                                    <p>15% Off on All-Inclusive Vacation Packages</p>
-                                    <span id="promo3">WANDER15 <button class="copy-btn"
-                                            onclick="togglePromo('promo3', 'item3', this)"><i
-                                                class="fas fa-copy"></i></button></span>
+                            <!-- Offer 3 -->
+                            <div class="promo-offer">
+                                <div class="promo-icon bank"><i class="fas fa-university"></i></div>
+                                <div class="promo-details">
+                                    <div class="promo-code">CTFKAXIS</div>
+                                    <div class="promo-discount">Flat ₹353 off</div>
+                                    <div class="promo-desc">Additional 5% cashback with Flipkart Axis Credit Card <span
+                                            class="link">Know more</span></div>
                                 </div>
-
+                                <button class="apply-btn">Apply</button>
                             </div>
+
+                            <div class="promo-offer">
+                                <div class="promo-icon"><i class="fas fa-tag"></i></div>
+                                <div class="promo-details">
+                                    <div class="promo-code">CTUPI</div>
+                                    <div class="promo-discount">Flat ₹290 off</div>
+                                    <div class="promo-desc">Applicable on UPI payment <span class="link">Know
+                                            more</span></div>
+                                </div>
+                                <button class="apply-btn">Apply</button>
+                            </div>
+
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+
+
+    <div class="modal fade" id="mealModal" tabindex="-1" aria-labelledby="mealModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-fullscreen modal-dialog-scrollable  modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div>
+                        <h5 class="modal-title fs-6"><i class="fas fa-utensils me-2"></i>Add in-flight meals to your journey
+                        </h5>
+                        <p class="text-success small mb-1">Meals are cheaper when pre-booked</p>
+                    </div>
+
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+
+                <div class="modal-body custom-scroll">
+
+                    <div id="mealList mt-0">
+                        <!-- Meal Item -->
+                        <div class="d-flex align-items-center justify-content-between border-bottom py-2 meal-item"
+                            data-price="400">
+                            <div class="d-flex align-items-center">
+                                <img src="images/AGSW.webp" alt="Meal" class="img-thumbnail me-3" width="40">
+                                <div>
+                                    <div class="fw-semibold small">#IndiaByIndiGo Regional</div>
+                                    <div class="text-muted small">₹400</div>
+                                </div>
+                            </div>
+                            <div class="input-group w-auto align-items-center">
+                                <button class="btn btn-outline-secondary btn-sm minus-btn">−</button>
+                                <input type="text" class="form-control form-control-sm text-center quantity-input"
+                                    value="0" readonly style="width: 40px;">
+                                <button class="btn btn-outline-secondary btn-sm plus-btn">+</button>
+                            </div>
+                        </div>
+
+                        <!-- Add more meals by duplicating above block -->
+                        <div class="d-flex align-items-center justify-content-between border-bottom py-2 meal-item"
+                            data-price="400">
+                            <div class="d-flex align-items-center">
+                                <img src="images/VCSW.webp" alt="Meal" class="img-thumbnail me-3" width="40">
+                                <div>
+                                    <div class="fw-semibold small">Vegan Special + Beverage</div>
+                                    <div class="text-muted small">₹400</div>
+                                </div>
+                            </div>
+                            <div class="input-group w-auto align-items-center">
+                                <button class="btn btn-outline-secondary btn-sm minus-btn">−</button>
+                                <input type="text" class="form-control form-control-sm text-center quantity-input"
+                                    value="0" readonly style="width: 40px;">
+                                <button class="btn btn-outline-secondary btn-sm plus-btn">+</button>
+                            </div>
+                        </div>
+
+                        <!-- Jain Special -->
+                       
+                            <div class="d-flex align-items-center justify-content-between border-bottom py-2 meal-item"
+                                data-price="400">
+                                <div class="d-flex align-items-center">
+                                    <img src="images/VGAN.webp" alt="Meal" class="img-thumbnail me-3" width="40">
+                                    <div>
+                                        <div class="fw-semibold small">Jain Special + Beverage</div>
+                                        <div class="text-muted small">₹400</div>
+                                    </div>
+                                </div>
+                                <div class="input-group w-auto align-items-center">
+                                    <button class="btn btn-outline-secondary btn-sm minus-btn">−</button>
+                                    <input type="text" class="form-control form-control-sm text-center quantity-input"
+                                        value="0" readonly style="width: 40px;">
+                                    <button class="btn btn-outline-secondary btn-sm plus-btn">+</button>
+                                </div>
+                            </div>
+
+                            <div class="d-flex align-items-center justify-content-between border-bottom py-2 meal-item"
+                                data-price="400">
+                                <div class="d-flex align-items-center">
+                                    <img src="images/VGAN.webp" alt="Meal" class="img-thumbnail me-3" width="40">
+                                    <div>
+                                        <div class="fw-semibold small">Jain Special + Beverage</div>
+                                        <div class="text-muted small">₹400</div>
+                                    </div>
+                                </div>
+                                <div class="input-group w-auto align-items-center">
+                                    <button class="btn btn-outline-secondary btn-sm minus-btn">−</button>
+                                    <input type="text" class="form-control form-control-sm text-center quantity-input"
+                                        value="0" readonly style="width: 40px;">
+                                    <button class="btn btn-outline-secondary btn-sm plus-btn">+</button>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-center justify-content-between border-bottom py-2 meal-item"
+                                data-price="400">
+                                <div class="d-flex align-items-center">
+                                    <img src="images/VGAN.webp" alt="Meal" class="img-thumbnail me-3" width="40">
+                                    <div>
+                                        <div class="fw-semibold small">Jain Special + Beverage</div>
+                                        <div class="text-muted small">₹400</div>
+                                    </div>
+                                </div>
+                                <div class="input-group w-auto align-items-center">
+                                    <button class="btn btn-outline-secondary btn-sm minus-btn">−</button>
+                                    <input type="text" class="form-control form-control-sm text-center quantity-input"
+                                        value="0" readonly style="width: 40px;">
+                                    <button class="btn btn-outline-secondary btn-sm plus-btn">+</button>
+                                </div>
+                            </div>
+
+                      
+                    </div>
+                </div>
+
+                <div class="modal-footer justify-content-between align-items-center">
+                    <a href="#" class="primary-text small" id="resetMeals">Remove all meal</a>
+                    <div class="d-flex align-items-center">
+                        <strong> ₹<span id="mealTotal">0</span></strong>
+                        <button type="button" class="btn primary-btn ms-2" data-bs-dismiss="modal">Done</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal fade" id="baggageModal" tabindex="-1">
+        <div class="modal-dialog modal-fullscreen modal-dialog-centered">
+            <div class="modal-content ">
+
+
+                <div class="modal-header">
+                    <div>
+                        <h5 class="modal-title fs-6">Add in-flight baggage to your journey</h5>
+                        <p class="text-success small mb-1">
+                            Baggage is cheaper when pre-booked
+                        </p>
+                    </div>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+
+                <div class="modal-body custom-scroll">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <span class="fw-bold">Onward</span>
+                        <span class="badge bg-light text-dark">DEL → BOM</span>
+                    </div>
+
+                    <div id="baggageItems">
+                        <!-- Sample Baggage Option -->
+                        <div class="d-flex justify-content-between align-items-center py-4 border-bottom">
+                            <div>Additional 3 KG</div>
+                            <div class="d-flex align-items-center">
+                                <span class="me-3">₹1,750</span>
+                                <button class="btn btn-sm btn-outline-secondary minus-btn" data-price="1750">−</button>
+                                <span class="mx-2 quantity">0</span>
+                                <button class="btn btn-sm btn-outline-secondary plus-btn" data-price="1750">+</button>
+                            </div>
+                        </div>
+
+                        <div class="d-flex justify-content-between align-items-center py-4 border-bottom">
+                            <div>Additional 3 KG</div>
+                            <div class="d-flex align-items-center">
+                                <span class="me-3">₹1,750</span>
+                                <button class="btn btn-sm btn-outline-secondary minus-btn" data-price="1750">−</button>
+                                <span class="mx-2 quantity">0</span>
+                                <button class="btn btn-sm btn-outline-secondary plus-btn" data-price="1750">+</button>
+                            </div>
+                        </div>
+
+                        <div class="d-flex justify-content-between align-items-center py-4 border-bottom">
+                            <div>Additional 3 KG</div>
+                            <div class="d-flex align-items-center">
+                                <span class="me-3">₹1,750</span>
+                                <button class="btn btn-sm btn-outline-secondary minus-btn" data-price="1750">−</button>
+                                <span class="mx-2 quantity">0</span>
+                                <button class="btn btn-sm btn-outline-secondary plus-btn" data-price="1750">+</button>
+                            </div>
+                        </div>
+
+                        <div class="d-flex justify-content-between align-items-center py-4 border-bottom">
+                            <div>Additional 3 KG</div>
+                            <div class="d-flex align-items-center">
+                                <span class="me-3">₹1,750</span>
+                                <button class="btn btn-sm btn-outline-secondary minus-btn" data-price="1750">−</button>
+                                <span class="mx-2 quantity">0</span>
+                                <button class="btn btn-sm btn-outline-secondary plus-btn" data-price="1750">+</button>
+                            </div>
+                        </div>
+
+                        <!-- Repeat for other baggage options -->
+                    </div>
+                </div>
+
+                <div class="modal-footer justify-content-between ">
+                    <a href="#" class="primary-text small">Remove all baggage</a>
+                    <div>
+                        <span class="fw-bold me-3">₹<span id="baggageTotal">0</span></span>
+                        <button class="btn primary-btn">Done</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
 
 
 
@@ -534,6 +850,50 @@
                 footerItems.forEach(i => i.classList.remove('active'));
                 item.classList.add('active');
             });
+        });
+    </script>
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            function setupModal(modalId, totalId) {
+                const modal = document.getElementById(modalId);
+                if (!modal) return;
+
+                const totalEl = document.getElementById(totalId);
+
+                modal.querySelectorAll(".plus-btn").forEach((btn) => {
+                    btn.addEventListener("click", function () {
+                        const qtyEl = this.parentElement.querySelector(".quantity");
+                        qtyEl.textContent = parseInt(qtyEl.textContent) + 1;
+                        updateTotal(modal, totalEl);
+                    });
+                });
+
+                modal.querySelectorAll(".minus-btn").forEach((btn) => {
+                    btn.addEventListener("click", function () {
+                        const qtyEl = this.parentElement.querySelector(".quantity");
+                        let qty = parseInt(qtyEl.textContent);
+                        if (qty > 0) {
+                            qtyEl.textContent = qty - 1;
+                            updateTotal(modal, totalEl);
+                        }
+                    });
+                });
+            }
+
+            function updateTotal(modal, totalEl) {
+                let total = 0;
+                modal.querySelectorAll(".plus-btn").forEach((btn) => {
+                    const price = parseInt(btn.dataset.price);
+                    const qty = parseInt(btn.parentElement.querySelector(".quantity").textContent);
+                    total += price * qty;
+                });
+                totalEl.textContent = total;
+            }
+
+            setupModal("mealModal", "mealTotal");
+            setupModal("baggageModal", "baggageTotal");
         });
     </script>
 
